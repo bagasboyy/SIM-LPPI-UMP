@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - SIM LPPI UMP</title>
+
+    <!-- #Bootstrap 5.3.7 CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- #My Style (hanya kelas tambahan spesifik) -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="bg-light">
+    <!-- #Navbar  (branding + logo UMP)     -->
+    <nav
+      class="navbar navbar-light px-4 shadow-sm"
+      style="background: #f5f5e9; height: 56px"
+    >
+      <span class="navbar-brand fw-semibold">SIM LPPI</span>
+      <img
+        src="assets/img/LogoUMP.jpg"
+        alt="Logo UMP"
+        height="36"
+        class="d-inline-block"
+      />
+      <!-- Hamburger (mobile) -->
+      <button
+        class="btn d-md-none"
+        id="sidebarToggle"
+        style="position: absolute; left: 1rem"
+      >
+        <i data-feather="menu"></i>
+      </button>
+    </nav>
+
+    <div class="d-flex">
+      <!-- ================================== -->
+      <!-- #Sidebar (fixed)                  -->
+      <!-- ================================== -->
+      <aside
+        id="sidebar"
+        class="bg-dark text-white p-3 position-fixed top-0 start-0 h-100"
+        style="
+          width: 250px;
+          z-index: 1040;
+          transform: translateX(0);
+          transition: 0.3s;
+        "
+      >
+        <!-- Close (mobile) -->
+        <div class="d-flex justify-content-end mb-2">
+          <button class="btn text-white d-md-none" id="sidebarClose">
+            <i data-feather="x"></i>
+          </button>
+        </div>
+
+        <!-- Profile -->
+        <div class="text-center mb-4">
+          <div
+            class="rounded-circle bg-secondary d-inline-flex align-items-center justify-content-center"
+            style="width: 60px; height: 60px"
+          >
+            <span class="fw-bold text-white">RA</span>
+          </div>
+          <div class="mt-2">
+            <strong>Rizki Abdillah</strong><br />
+            <small>2003040065</small>
+          </div>
+        </div>
+
+        <!-- Menu -->
+        <ul class="nav flex-column small">
+          <li class="nav-item mb-2">
+            <a class="nav-link text-white d-flex align-items-center" href="#">
+              <i data-feather="home" class="me-2"></i> Dashboard
+            </a>
+          </li>
+          <li class="nav-item mb-2">
+            <a class="nav-link text-white d-flex align-items-center" href="#">
+              <i data-feather="users" class="me-2"></i> Mentoring
+            </a>
+          </li>
+          <li class="nav-item mb-2">
+            <a class="nav-link text-white d-flex align-items-center" href="#">
+              <i data-feather="book-open" class="me-2"></i> Tes Baca Al‑Qur’an
+            </a>
+          </li>
+          <li class="nav-item mb-2">
+            <a class="nav-link text-white d-flex align-items-center" href="#">
+              <i data-feather="book" class="me-2"></i> BIBAQ
+            </a>
+          </li>
+          <li class="nav-item mb-2">
+            <a class="nav-link text-white d-flex align-items-center" href="#">
+              <i data-feather="user" class="me-2"></i> Akun
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center" href="#">
+              <i data-feather="log-out" class="me-2"></i> Keluar
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- ================================== -->
+      <!-- #Main Wrapper (geser 250 px)      -->
+      <!-- ================================== -->
+      <div class="flex-grow-1" style="margin-left: 250px">
+        <!-- ---------- HERO GRADIENT ---------- -->
+        <section
+          class="px-4 py-5"
+          style="
+            background: linear-gradient(135deg, #3154d8 0%, #3d64e8 100%);
+            color: white;
+          "
+        >
+          <div class="row align-items-center">
+            <div class="col-md-7">
+              <h2 class="fw-semibold mb-2">Welcome to SIM LPPI page 1</h2>
+              <p class="mb-0">
+                Your platform for mentoring and professional development.
+              </p>
+            </div>
+            <div class="col-md-5 text-center mt-4 mt-md-0">
+              <!-- Ilustrasi Header -->
+              <img
+                src="assets/img/hero-people.svg"
+                alt="Illustration"
+                class="img-fluid"
+                style="max-height: 180px"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- ---------- CONTENT AREA ---------- -->
+        <div class="container-fluid py-4">
+          <div class="row">
+            <!-- ====== Kolom Kiri: Daftar Modul ====== -->
+            <div class="col-lg-8">
+              <!-- Card 1 -->
+              <div class="card border-warning-subtle mb-3">
+                <div class="card-body d-flex">
+                  <div class="flex-grow-1">
+                    <h6 class="fw-semibold">Mentoring</h6>
+                    <p class="small mb-3">
+                      Wajib diikuti mahasiswa baru sebagai syarat mengambil mata
+                      kuliah Kemuhammadiyahan. Tersedia pendaftaran mentee ulang
+                      dan seleksi untuk menjadi mentor.
+                    </p>
+                    <button class="btn btn-primary btn-sm me-2">MENTEE</button>
+                    <button class="btn btn-outline-primary btn-sm">
+                      MENTOR
+                    </button>
+                  </div>
+                  <img
+                    src="assets/img/placeholder.svg"
+                    alt="Thumb"
+                    width="60"
+                    class="ms-3 align-self-start"
+                  />
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="card border-warning-subtle mb-3">
+                <div class="card-body d-flex">
+                  <div class="flex-grow-1">
+                    <h6 class="fw-semibold">Tes Baca Al‑Qur’an</h6>
+                    <p class="small mb-3">
+                      TBA wajib sebelum mengikuti KKN. Jika tidak lulus,
+                      mahasiswa harus mendaftar ulang untuk mengikuti tes
+                      kembali.
+                    </p>
+                    <button class="btn btn-primary btn-sm">DAFTAR</button>
+                  </div>
+                  <img
+                    src="assets/img/placeholder.svg"
+                    alt="Thumb"
+                    width="60"
+                    class="ms-3 align-self-start"
+                  />
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="card border-warning-subtle mb-3">
+                <div class="card-body d-flex">
+                  <div class="flex-grow-1">
+                    <h6 class="fw-semibold">BIBAQ</h6>
+                    <p class="small mb-3">
+                      BIBAQ wajib bagi mahasiswa yang belum lulus TBA.
+                      Dilaksanakan sebanyak 12 kali pertemuan dengan dosen
+                      pembimbing.
+                    </p>
+                    <button class="btn btn-primary btn-sm me-2">DAFTAR</button>
+                    <button class="btn btn-outline-primary btn-sm">
+                      BIMBINGAN
+                    </button>
+                  </div>
+                  <img
+                    src="assets/img/placeholder.svg"
+                    alt="Thumb"
+                    width="60"
+                    class="ms-3 align-self-start"
+                  />
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="card border-warning-subtle">
+                <div class="card-body d-flex">
+                  <div class="flex-grow-1">
+                    <h6 class="fw-semibold">
+                      Seleksi Mentor &amp; Mentee Berprestasi
+                    </h6>
+                    <p class="small mb-3">
+                      Seleksi ini memberi kesempatan untuk belajar dan liburan
+                      ke Singapura. Terbuka untuk mentor dan mentee aktif yang
+                      memenuhi syarat.
+                    </p>
+                    <button class="btn btn-primary btn-sm">DAFTAR</button>
+                  </div>
+                  <img
+                    src="assets/img/placeholder.svg"
+                    alt="Thumb"
+                    width="60"
+                    class="ms-3 align-self-start"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- ====== Kolom Kanan: Pengumuman ====== -->
+            <div class="col-lg-4 mt-4 mt-lg-0">
+              <div class="card h-100">
+                <div
+                  class="card-header d-flex align-items-center gap-2 fw-semibold"
+                >
+                  <i data-feather="bell"></i> Pengumuman
+                </div>
+                <div class="card-body overflow-auto" style="max-height: 420px">
+                  <p class="text-muted small mb-0">Tidak ada</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END Main -->
+    </div>
+
+    <!-- ============  SCRIPTS  ============ -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Sidebar toggle -->
+    <script>
+      const sidebar = document.getElementById("sidebar");
+      document.getElementById("sidebarToggle").onclick = () =>
+        (sidebar.style.transform = "translateX(0)");
+      document.getElementById("sidebarClose").onclick = () =>
+        (sidebar.style.transform = "translateX(-100%)");
+    </script>
+
+    <!-- Feather Icons -->
+    <script>
+      feather.replace({ color: "#ffffff" });
+    </script>
+  </body>
+</html>

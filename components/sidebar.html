@@ -1,0 +1,89 @@
+<!-- #Component Sidebar Responsive -->
+<aside
+  id="sidebar"
+  class="bg-dark text-white position-fixed top-0 start-0 h-100 p-3"
+  style="width: 250px; z-index: 1040; transition: transform 0.3s ease-in-out"
+>
+  <!-- Close Button (X) -->
+  <div class="d-flex justify-content-end">
+    <button id="sidebarClose" class="btn btn-sm text-white">
+      <i data-feather="x"></i>
+    </button>
+  </div>
+
+  <!-- Profile Info -->
+  <div class="text-center mb-4">
+    <div
+      class="rounded-circle bg-secondary d-inline-flex align-items-center justify-content-center"
+      style="width: 60px; height: 60px"
+    >
+      <span class="text-white fw-bold">RA</span>
+    </div>
+    <div class="mt-2">
+      <strong>Rizki Abdillah</strong><br />
+      <small>2003040065</small>
+    </div>
+  </div>
+
+  <!-- Navigation Menu -->
+  <ul class="nav flex-column">
+    <li class="nav-item mb-2">
+      <a
+        class="nav-link text-white d-flex align-items-center"
+        href="dashboard.html"
+      >
+        <i data-feather="home" class="me-2"></i> Dashboard
+      </a>
+    </li>
+    <li class="nav-item mb-2">
+      <a class="nav-link text-white d-flex align-items-center" href="#">
+        <i data-feather="users" class="me-2"></i> Mentoring
+      </a>
+    </li>
+    <li class="nav-item mb-2">
+      <a class="nav-link text-white d-flex align-items-center" href="#">
+        <i data-feather="book-open" class="me-2"></i> Tes Baca Al-Qur'an
+      </a>
+    </li>
+    <li class="nav-item mb-2">
+      <a class="nav-link text-white d-flex align-items-center" href="#">
+        <i data-feather="book" class="me-2"></i> BIBAQ
+      </a>
+    </li>
+    <li class="nav-item mb-2">
+      <a class="nav-link text-white d-flex align-items-center" href="#">
+        <i data-feather="user" class="me-2"></i> Akun
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white d-flex align-items-center" href="#">
+        <i data-feather="log-out" class="me-2"></i> Keluar
+      </a>
+    </li>
+  </ul>
+</aside>
+
+<!-- Hamburger Button -->
+<button
+  id="sidebarToggle"
+  class="btn text-white position-fixed top-0 start-0 m-3 d-md-none"
+  style="z-index: 1050"
+>
+  <i data-feather="menu"></i>
+</button>
+
+<script>
+  // Toggle Sidebar
+  document
+    .getElementById("sidebarToggle")
+    .addEventListener("click", function () {
+      document.getElementById("sidebar").style.transform = "translateX(0)";
+    });
+
+  // Close Sidebar
+  document
+    .getElementById("sidebarClose")
+    .addEventListener("click", function () {
+      document.getElementById("sidebar").style.transform = "translateX(-100%)";
+    });
+</script>

@@ -1,0 +1,20 @@
+/* :root {
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  --border-radius: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--primary-gradient);
+  background: linear-gradient(to right, #4e73df, #3757c4); gradasi biru 
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
