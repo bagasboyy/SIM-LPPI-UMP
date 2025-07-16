@@ -10,7 +10,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
-  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .navbar {
@@ -28,7 +29,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  overflow-y: auto;
+  overflow-x: hidden;
   transition: width 0.3s ease;
 }
 
@@ -45,16 +46,61 @@ body {
   width: 70px;
 }
 
+.sidebar .menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.sidebar .menu-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .menu-item.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  font-weight: bold;
+}
+
+/* Saat sidebar collapse, main disesuaikan */
+.sidebar.collapsed ~ main {
+  margin-left: 70px !important;
+}
+
+/* note buat sidebar collapse gambarnyamasih belum ditengah */
+.sidebar.collapsed img,
 .sidebar.collapsed .label,
 .sidebar.collapsed .fw-bold,
-.sidebar.collapsed .text-secondary,
-.sidebar.collapsed img {
+.sidebar.collapsed .text-secondary {
   display: none;
 }
 
 main {
+  background-color: #f1f1e6;
+  position: relative;
   flex-grow: 1;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 20px;
+}
+
+/* Default: sidebar full width */
+#sidebar {
+  width: 250px;
+  transition: width 0.3s ease;
+}
+
+/* Collapsed sidebar */
+#sidebar.collapsed {
+  width: 70px;
+}
+
+/* Konten utama menyesuaikan sidebar */
+#sidebar.collapsed + main {
+  margin-left: 70px;
+}
+#sidebar + main {
+  margin-left: 250px;
 }

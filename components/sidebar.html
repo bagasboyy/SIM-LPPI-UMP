@@ -1,47 +1,50 @@
-<aside class="sidebar" id="sidebar">
-  <div class="text-end">
-    <button class="btn btn-sm btn-light my-3 ms-3" onclick="toggleSidebar()">
-      <i data-feather="x" class=""></i>
-      <i data-feather="menu"></i>
-    </button>
+<aside class="sidebar d-flex flex-column justify-between" id="sidebar">
+  <!-- Bagian Atas -->
+  <div class="sidebar-top">
+    <div class="text-center mt-3">
+      <img
+        src="/assets/img/LogoUMP.jpg"
+        alt="Logo UMP"
+        class="rounded-circle img-fluid mb-3"
+        style="max-height: 70px"
+      />
+      <div class="fw-bold">Rizki Abdullah</div>
+      <div class="text-secondary">2050000005</div>
+    </div>
+
+    <div class="menu-top">
+      <a href="/dashboard.html" class="menu-item" data-tooltip="Dashboard">
+        <i data-feather="home"></i> <span class="label">Dashboard</span>
+      </a>
+      <a
+        href="/pages/mentoring/mentoring.html"
+        class="menu-item"
+        data-tooltip="Mentoring"
+      >
+        <i data-feather="users"></i> <span class="label">Mentoring</span>
+      </a>
+      <a href="#" class="menu-item" data-tooltip="Tes Baca Al-Qur'an">
+        <i data-feather="book"></i>
+        <span class="label">Tes Baca Al-Qur'an</span>
+      </a>
+      <a href="#" class="menu-item" data-tooltip="BIBAQ">
+        <i data-feather="activity"></i> <span class="label">BIBAQ</span>
+      </a>
+    </div>
   </div>
 
-  <div class="mb-4 text-center">
-    <img
-      src="assets/img/LogoUMP.jpg"
-      alt="none"
-      class="rounded-circle img-fluid mb-3"
-      style="max-height: 100px"
-    />
-    <div class="fw-bold">Rizki Abdullah</div>
-    <div class="text-secondary">2050000005</div>
-  </div>
-
-  <div class="text-start">
-    <a href="#"
-      ><i data-feather="home"></i> <span class="label">Dashboard</span></a
-    >
-    <a href="#"
-      ><i data-feather="users"></i> <span class="label">Mentoring</span></a
-    >
-    <a href="#"
-      ><i data-feather="book"></i>
-      <span class="label">Tes Baca Al-Qur'an</span></a
-    >
-    <a href="#"
-      ><i data-feather="activity"></i> <span class="label">BIBAQ</span></a
-    >
-    <a href="#"><i data-feather="user"></i> <span class="label">Akun</span></a>
-    <a href="#"
-      ><i data-feather="log-out"></i> <span class="label">Keluar</span></a
-    >
+  <!-- Bagian Bawah -->
+  <div class="menu-bottom mt-auto mb-3 border-top">
+    <a href="#" class="menu-item" data-tooltip="Akun">
+      <i data-feather="user"></i> <span class="label">Akun</span>
+    </a>
+    <a href="#" class="menu-item" id="logout-btn">
+      <i data-feather="log-out"></i>
+      <span class="label">Keluar</span>
+    </a>
   </div>
 </aside>
 
 <script>
-  function toggleSidebar() {
-    const sidebar = document.getElementById("sidebar");
-    sidebar.classList.toggle("collapsed");
-  }
   feather.replace();
 </script>
