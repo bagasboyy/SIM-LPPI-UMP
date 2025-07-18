@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - SIM LPPI UMP</title>
+
+    <!-- Bootstrap 5.3.7 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- #My Style -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+
+  <body class="d-flex flex-column vh-100">
+    <!-- Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Wrapper -->
+    <div class="d-flex flex-grow-1 overflow-hidden">
+      <!-- Sidebar -->
+      <div id="sidebar-placeholder"></div>
+      <!-- ngerapihin tampilan antara main konten sama breadcrumb(nav biasa) -->
+      <div class="flex-grow-1 overflow-auto">
+        <!-- navigasi biasa -->
+        <nav
+          style="--bs-breadcrumb-divider: '>'"
+          aria-label="breadcrumb"
+          class="border pt-2 ps-2"
+        >
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/dashboard.html">Home</a></li>
+            <li class="breadcrumb-item">
+              <a href="/pages/mentoring/mentoring.html">Mentoring</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="/pages/mentoring/mentee.html">Mentee</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Materi dan Tugas
+            </li>
+          </ol>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="d-flex flex-column overflow-auto px-2">
+          <!-- Struktur Utama -->
+          <section class="container py-4">
+            <!-- Card Biodata Mentor -->
+            <div class="card mb-4 bg-light-subtle border-primary shadow-sm">
+              <div class="row g-0 align-items-center">
+                <div class="col-md-10">
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <i data-feather="user" class="me-2"></i>Biodata Mentor
+                      Pembimbing
+                    </h5>
+                    <p class="mb-1"><strong>NIM:</strong> 26543486923458</p>
+                    <p class="mb-1"><strong>Nama:</strong> Kurnia Yanto</p>
+                    <p class="mb-1">
+                      <strong>Prodi:</strong> Teknik Informatika
+                    </p>
+                    <p class="mb-1">
+                      <strong>Fakultas:</strong> Sains dan Teknik
+                    </p>
+                    <p class="mb-0"><strong>No. HP/WA:</strong> 089XXXXXXXXX</p>
+                  </div>
+                </div>
+                <div class="col-md-2 text-center">
+                  <img
+                    src="https://i.imgur.com/0y0y0y0.png"
+                    class="img-fluid rounded-circle m-3"
+                    alt="Foto Mentor"
+                    width="100"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Materi & Tugas -->
+            <div class="card shadow-sm border">
+              <div class="card-body">
+                <h5 class="card-title mb-0">SESI 1</h5>
+                <p class="fw-semibold">Kemuhammadiyahan</p>
+                <p class="text-muted mb-4">
+                  Mempelajari tentang hukum Islam<br />Senin, 25 Juni 2025
+                </p>
+
+                <!-- Materi -->
+                <div
+                  class="d-flex justify-content-between align-items-center mb-2"
+                >
+                  <label class="fw-semibold">Materi Sesi 1</label>
+                  <a href="#" class="btn btn-sm btn-outline-secondary"
+                    >Download</a
+                  >
+                </div>
+
+                <!-- Tugas -->
+                <div
+                  class="d-flex justify-content-between align-items-center mb-2"
+                >
+                  <label class="fw-semibold">Tugas Sesi 1</label>
+                  <a href="#" class="btn btn-sm btn-outline-secondary"
+                    >Download</a
+                  >
+                </div>
+
+                <!-- Upload Tugas -->
+                <div class="mb-3">
+                  <label class="form-label fw-semibold"
+                    >Pengumpulan Tugas Sesi 1</label
+                  >
+                  <p class="text-muted small mb-2">
+                    Deadline: Jumat, 29 Juni 2025, 23.59 WIB
+                  </p>
+                  <input class="form-control" type="file" id="uploadTugas" />
+                </div>
+
+                <!-- Feedback -->
+                <div class="mb-3">
+                  <label for="feedback" class="form-label fw-semibold"
+                    >Feedback pertemuan sesi 1</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="feedback"
+                    rows="3"
+                    placeholder="Tulis feedback di sini..."
+                  ></textarea>
+                </div>
+
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  onclick="konfirmasiFeedback()"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Modal Konfirmasi -->
+          <div
+            class="modal fade"
+            id="modalKonfirmasi"
+            tabindex="-1"
+            aria-labelledby="modalKonfirmasiLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content border-warning">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalKonfirmasiLabel">
+                    Konfirmasi
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Tutup"
+                  ></button>
+                </div>
+                <div class="modal-body">Yakin data sudah benar?</div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Tidak
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-success"
+                    onclick="kirimFeedback()"
+                  >
+                    Ya
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal Sukses -->
+          <div
+            class="modal fade"
+            id="modalSukses"
+            tabindex="-1"
+            aria-labelledby="modalSuksesLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content border-success">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalSuksesLabel">Berhasil</h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Tutup"
+                  ></button>
+                </div>
+                <div class="modal-body">Feedback berhasil dikirim!</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <footer class="text-center py-3 mt-5 bg-white border-top">
+            <small
+              >&copy; 2025 SIM LPPI Universitas Muhammadiyah Purwokerto</small
+            >
+          </footer>
+        </main>
+      </div>
+    </div>
+
+    <!-- Bootstrap Bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <!-- MAIN JS -->
+    <script type="module" src="/assets/js/main.js"></script>
+  </body>
+</html>

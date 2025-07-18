@@ -46,12 +46,184 @@
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
             <li class="breadcrumb-item"><a href="#">Mentoring</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Mentee</li>
+            <li class="breadcrumb-item"><a href="#">Mentee</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Daftar</li>
           </ol>
         </nav>
 
         <!-- Main Content -->
         <main class="d-flex flex-column overflow-auto px-2">
+          <!-- Main Konten Form Pendaftaran Mentoring -->
+          <section class="container mt-5 mb-5">
+            <div class="card shadow p-4">
+              <h5 class="mb-4 text-primary">
+                <i data-feather="edit-3"></i> Pendaftaran Mentoring
+              </h5>
+
+              <form id="formPendaftaran">
+                <div class="row mb-3">
+                  <label class="col-sm-3 col-form-label">Nama</label>
+                  <div class="col-sm-9">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="nama"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label class="col-sm-3 col-form-label">Email</label>
+                  <div class="col-sm-9">
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label class="col-sm-3 col-form-label">NIM</label>
+                  <div class="col-sm-9">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="nim"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label class="col-sm-3 col-form-label">Prodi</label>
+                  <div class="col-sm-9">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="prodi"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label class="col-sm-3 col-form-label">Fakultas</label>
+                  <div class="col-sm-9">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="fakultas"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label class="col-sm-3 col-form-label">Jenis Kelamin</label>
+                  <div class="col-sm-9">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="jk"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row mb-4">
+                  <label class="col-sm-3 col-form-label">No. HP/WA</label>
+                  <div class="col-sm-9">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="hp"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary px-4">
+                    Submit
+                  </button>
+                </div>
+              </form>
+
+              <p class="text-muted mt-3" style="font-size: 0.9rem">
+                *Form pendaftaran ini berlaku untuk daftar ulang bagi yang belum
+                lulus Mentoring.
+              </p>
+            </div>
+          </section>
+
+          <!-- Modal Konfirmasi -->
+          <div
+            class="modal fade"
+            id="konfirmasiModal"
+            tabindex="-1"
+            aria-labelledby="konfirmasiLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content p-3">
+                <div class="modal-header border-0">
+                  <h5 class="modal-title" id="konfirmasiLabel">Konfirmasi</h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Tutup"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  Apakah Anda yakin data sudah benar?
+                </div>
+                <div class="modal-footer border-0">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Tidak
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-success"
+                    id="btnYaSubmit"
+                  >
+                    Ya
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal Sukses -->
+          <div
+            class="modal fade"
+            id="suksesModal"
+            tabindex="-1"
+            aria-labelledby="suksesLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content text-center p-4">
+                <div class="mb-3">
+                  <i
+                    class="text-success"
+                    data-feather="check-circle"
+                    style="width: 48px; height: 48px"
+                  ></i>
+                </div>
+                <h5 class="mb-3" id="suksesLabel">Berhasil Submit</h5>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-dismiss="modal"
+                >
+                  Tutup
+                </button>
+              </div>
+            </div>
+          </div>
+
           <!-- Footer -->
           <footer class="text-center py-3 mt-5 bg-white border-top">
             <small
@@ -62,14 +234,13 @@
       </div>
     </div>
 
-    <!-- MAIN JS -->
-    <script type="module" src="/assets/js/main.js"></script>
-
     <!-- Bootstrap Bundle -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
       crossorigin="anonymous"
     ></script>
+    <!-- MAIN JS -->
+    <script type="module" src="/assets/js/main.js"></script>
   </body>
 </html>

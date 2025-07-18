@@ -97,6 +97,73 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch((err) => console.error("Sidebar load error:", err));
   }
 
+  // form submit (HALAMAN DAFTAR)
+  const form = document.getElementById("formPendaftaran");
+  const konfirmasiModal = new bootstrap.Modal(
+    document.getElementById("konfirmasiModal")
+  );
+  const suksesModal = new bootstrap.Modal(
+    document.getElementById("suksesModal")
+  );
+  const btnYaSubmit = document.getElementById("btnYaSubmit");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // Stop submit dulu
+    konfirmasiModal.show(); // Tampilkan modal konfirmasi
+  });
+
+  btnYaSubmit.addEventListener("click", function () {
+    konfirmasiModal.hide(); // Tutup modal konfirmasi
+    suksesModal.show(); // Tampilkan modal sukses
+
+    // Reset form setelah submit berhasil
+    setTimeout(() => {
+      form.reset();
+    }, 1000);
+  });
+
+  // ==============================
+  // FEEDBACK FUNCTIONALITY
+  // ==============================
+
+  // Fungsi untuk memunculkan modal konfirmasi saat klik tombol submit
+  window.konfirmasiFeedback = function () {
+    const feedbackInput = document.getElementById("feedback");
+    const feedback = feedbackInput.value.trim();
+
+    if (feedback === "") {
+      alert("Feedback tidak boleh kosong!");
+      return;
+    }
+
+    const modalKonfirmasi = new bootstrap.Modal(
+      document.getElementById("modalKonfirmasi")
+    );
+    modalKonfirmasi.show();
+  };
+
+  // Fungsi untuk mengirim feedback dan menampilkan modal sukses
+  window.kirimFeedback = function () {
+    const modalKonfirmasi = bootstrap.Modal.getInstance(
+      document.getElementById("modalKonfirmasi")
+    );
+
+    if (modalKonfirmasi) {
+      modalKonfirmasi.hide();
+    }
+
+    setTimeout(() => {
+      const modalSukses = new bootstrap.Modal(
+        document.getElementById("modalSukses")
+      );
+      modalSukses.show();
+
+      // Reset textarea feedback setelah sukses kirim
+      const feedbackInput = document.getElementById("feedback");
+      feedbackInput.value = "";
+    }, 500); // Delay sedikit agar transisi modal terasa alami
+  };
+
   // Tombol Logout
   const logoutBtn = document.getElementById("logout-btn");
   if (logoutBtn) {
