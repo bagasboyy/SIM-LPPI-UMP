@@ -1,179 +1,209 @@
 document.addEventListener("DOMContentLoaded", () => {
   feather.replace();
+  initLoginForm();
+  initNavbarSidebar();
+  initPendaftaranForm();
+  initFeedback();
+  initLogout();
+  initMobileSidebar();
+});
 
-  // Cek jika ada login form (khusus index.html)
+// ==============================
+// FUNGSI: LOGIN FORM (index.html)
+// ==============================
+function initLoginForm() {
   const loginForm = document.getElementById("loginForm");
-  if (loginForm) {
-    loginForm.addEventListener("submit", function (e) {
-      e.preventDefault();
+  if (!loginForm) return;
 
-      const nim = document.getElementById("nim").value;
-      const password = document.getElementById("password").value;
+  const nimInput = document.getElementById("nim");
+  const passwordInput = document.getElementById("password");
 
-      document.body.classList.add("loading");
+  loginForm.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-      setTimeout(() => {
-        if (nim && password) {
-          sessionStorage.setItem("userLoggedIn", "true");
-          sessionStorage.setItem("userNIM", nim);
+    const nim = nimInput?.value;
+    const password = passwordInput?.value;
+    document.body.classList.add("loading");
 
-          window.location.href = "dashboard.html";
-        } else {
-          alert("Please fill in all fields");
-          document.body.classList.remove("loading");
-        }
-      }, 1500);
+    setTimeout(() => {
+      if (nim && password) {
+        sessionStorage.setItem("userLoggedIn", "true");
+        sessionStorage.setItem("userNIM", nim);
+        window.location.href = "dashboard.html";
+      } else {
+        alert("Please fill in all fields");
+        document.body.classList.remove("loading");
+      }
+    }, 1500);
+  });
+
+  document.querySelectorAll(".form-control").forEach((input) => {
+    input.addEventListener("focus", () => {
+      input.parentElement.classList.add("focused");
     });
-
-    // Input animasi
-    document.querySelectorAll(".form-control").forEach((input) => {
-      input.addEventListener("focus", () => {
-        input.parentElement.classList.add("focused");
-      });
-
-      input.addEventListener("blur", () => {
-        if (!input.value) {
-          input.parentElement.classList.remove("focused");
-        }
-      });
+    input.addEventListener("blur", () => {
+      if (!input.value) {
+        input.parentElement.classList.remove("focused");
+      }
     });
+  });
 
-    // Cegah akses login kalau udah login
-    if (sessionStorage.getItem("userLoggedIn") === "true") {
-      window.location.href = "dashboard.html";
-    }
+  // Otomatis redirect jika sudah login
+  if (sessionStorage.getItem("userLoggedIn") === "true") {
+    window.location.href = "dashboard.html";
   }
+}
 
-  // Cek jika halaman punya navbar dan sidebar
+// ==============================
+// FUNGSI: NAVBAR & SIDEBAR
+// ==============================
+function initNavbarSidebar() {
   const navbarPlaceholder = document.getElementById("navbar-placeholder");
   const sidebarPlaceholder = document.getElementById("sidebar-placeholder");
 
-  if (navbarPlaceholder && sidebarPlaceholder) {
-    // Load Navbar
-    fetch("/components/navbar.html")
-      .then((res) => res.text())
-      .then((data) => {
-        navbarPlaceholder.innerHTML = data;
-        feather.replace();
+  if (!navbarPlaceholder || !sidebarPlaceholder) return;
+
+  // Load Navbar
+  fetch("/components/navbar.html")
+    .then((res) => res.text())
+    .then((data) => {
+      navbarPlaceholder.innerHTML = data;
+      feather.replace();
+    });
+
+  // Load Sidebar
+  fetch("/components/sidebar.html")
+    .then((res) => res.text())
+    .then((data) => {
+      sidebarPlaceholder.innerHTML = data;
+      feather.replace();
+
+      const sidebar = document.getElementById("sidebar");
+      const toggleBtn = document.getElementById("toggleBtn");
+
+      toggleBtn?.addEventListener("click", () => {
+        sidebar.classList.toggle("collapsed");
       });
 
-    // Load Sidebar
-    fetch("/components/sidebar.html")
-      .then((res) => res.text())
-      .then((data) => {
-        sidebarPlaceholder.innerHTML = data;
-        feather.replace();
+      highlightActiveMenu();
+    })
+    .catch((err) => console.error("Sidebar load error:", err));
+}
 
-        // Toggle Sidebar
-        const sidebar = document.getElementById("sidebar");
-        const toggleBtn = document.getElementById("toggleBtn");
+function highlightActiveMenu() {
+  const currentPath = window.location.pathname;
+  const menuLinks = document.querySelectorAll(".menu-item");
 
-        toggleBtn?.addEventListener("click", () => {
-          sidebar.classList.toggle("collapsed");
-        });
+  menuLinks.forEach((link) => {
+    const href = link.getAttribute("href");
+    if (!href) return;
 
-        // Highlight menu aktif
-        const currentPath = window.location.pathname;
-        const menuLinks = document.querySelectorAll(".menu-item");
+    if (currentPath.includes(href)) {
+      link.classList.add("active");
+    }
 
-        menuLinks.forEach((link) => {
-          const href = link.getAttribute("href");
+    if (
+      href.startsWith("/pages/mentoring") &&
+      currentPath.startsWith("/pages/mentoring")
+    ) {
+      link.classList.add("active");
+    }
+  });
+}
 
-          // Jika menu mengarah ke folder mentoring, dan path saat ini juga mengandung mentoring
-          if (href && currentPath.includes(href)) {
-            link.classList.add("active");
-          }
-
-          // Tambahan: Jika link menu adalah /pages/mentoring/ dan current path juga di dalamnya
-          if (
-            href &&
-            href.startsWith("/pages/mentoring") &&
-            currentPath.startsWith("/pages/mentoring")
-          ) {
-            link.classList.add("active");
-          }
-        });
-      })
-      .catch((err) => console.error("Sidebar load error:", err));
-  }
-
-  // form submit (HALAMAN DAFTAR)
+// ==============================
+// FUNGSI: FORM PENDAFTARAN
+// ==============================
+function initPendaftaranForm() {
   const form = document.getElementById("formPendaftaran");
-  const konfirmasiModal = new bootstrap.Modal(
-    document.getElementById("konfirmasiModal")
-  );
-  const suksesModal = new bootstrap.Modal(
-    document.getElementById("suksesModal")
-  );
+  const konfirmasiModal = safeModal("konfirmasiModal");
+  const suksesModal = safeModal("suksesModal");
   const btnYaSubmit = document.getElementById("btnYaSubmit");
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault(); // Stop submit dulu
-    konfirmasiModal.show(); // Tampilkan modal konfirmasi
+  if (!form || !btnYaSubmit || !konfirmasiModal || !suksesModal) return;
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    konfirmasiModal.show();
   });
 
-  btnYaSubmit.addEventListener("click", function () {
-    konfirmasiModal.hide(); // Tutup modal konfirmasi
-    suksesModal.show(); // Tampilkan modal sukses
-
-    // Reset form setelah submit berhasil
-    setTimeout(() => {
-      form.reset();
-    }, 1000);
+  btnYaSubmit.addEventListener("click", () => {
+    konfirmasiModal.hide();
+    suksesModal.show();
+    setTimeout(() => form.reset(), 1000);
   });
+}
 
-  // ==============================
-  // FEEDBACK FUNCTIONALITY
-  // ==============================
-
-  // Fungsi untuk memunculkan modal konfirmasi saat klik tombol submit
+// ==============================
+// FUNGSI: FEEDBACK FORM
+// ==============================
+function initFeedback() {
   window.konfirmasiFeedback = function () {
     const feedbackInput = document.getElementById("feedback");
-    const feedback = feedbackInput.value.trim();
+    const feedback = feedbackInput?.value.trim();
 
-    if (feedback === "") {
+    if (!feedback) {
       alert("Feedback tidak boleh kosong!");
       return;
     }
 
-    const modalKonfirmasi = new bootstrap.Modal(
-      document.getElementById("modalKonfirmasi")
-    );
-    modalKonfirmasi.show();
+    const modalKonfirmasi = safeModal("modalKonfirmasi");
+    modalKonfirmasi?.show();
   };
 
-  // Fungsi untuk mengirim feedback dan menampilkan modal sukses
   window.kirimFeedback = function () {
     const modalKonfirmasi = bootstrap.Modal.getInstance(
       document.getElementById("modalKonfirmasi")
     );
-
-    if (modalKonfirmasi) {
-      modalKonfirmasi.hide();
-    }
+    modalKonfirmasi?.hide();
 
     setTimeout(() => {
-      const modalSukses = new bootstrap.Modal(
-        document.getElementById("modalSukses")
-      );
-      modalSukses.show();
+      const modalSukses = safeModal("modalSukses");
+      modalSukses?.show();
 
-      // Reset textarea feedback setelah sukses kirim
       const feedbackInput = document.getElementById("feedback");
-      feedbackInput.value = "";
-    }, 500); // Delay sedikit agar transisi modal terasa alami
+      if (feedbackInput) feedbackInput.value = "";
+    }, 500);
   };
+}
 
-  // Tombol Logout
-  const logoutBtn = document.getElementById("logout-btn");
-  if (logoutBtn) {
-    logoutBtn.addEventListener("click", function (e) {
-      e.preventDefault();
-      const confirmLogout = confirm("Apakah Anda yakin ingin keluar?");
-      if (confirmLogout) {
-        sessionStorage.clear();
-        window.location.href = "index.html";
-      }
+// ==============================
+// FUNGSI: SIDEBAR MOBILE (Offcanvas)
+// ==============================
+function initMobileSidebar() {
+  const mobileNavLinks = document.querySelectorAll("#mobileSidebar .nav-link");
+  const offcanvasEl = document.getElementById("mobileSidebar");
+
+  if (!offcanvasEl || mobileNavLinks.length === 0) return;
+
+  mobileNavLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasEl);
+      if (bsOffcanvas) bsOffcanvas.hide();
     });
-  }
-});
+  });
+}
+
+// ==============================
+// FUNGSI: LOGOUT
+// ==============================
+function initLogout() {
+  const logoutBtn = document.getElementById("logout-btn");
+  if (!logoutBtn) return;
+
+  logoutBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (confirm("Apakah Anda yakin ingin keluar?")) {
+      sessionStorage.clear();
+      window.location.href = "index.html";
+    }
+  });
+}
+
+// ==============================
+// FUNGSI BANTUAN
+// ==============================
+function safeModal(id) {
+  const el = document.getElementById(id);
+  return el ? new bootstrap.Modal(el) : null;
+}

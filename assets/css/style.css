@@ -104,3 +104,40 @@ main {
 #sidebar + main {
   margin-left: 250px;
 }
+
+/* buat pendaftaran mentor */
+.card-box {
+  min-width: 200px;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.arrow {
+  font-size: 24px;
+  margin: 10px;
+}
+.status-box {
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
+  margin-top: 30px;
+}
+.status-box .badge {
+  font-size: 1rem;
+  padding: 10px 20px;
+}
+@media (max-width: 768px) {
+  .flow-container {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+  .arrow {
+    transform: rotate(90deg);
+    margin: 0;
+  }
+}
+/* sampai sini pendaftaran mentor*/

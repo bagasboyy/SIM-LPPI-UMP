@@ -1,14 +1,27 @@
 <header class="navbar navbar-expand-lg navbar-light bg-light shadow-sm px-1">
   <div class="container-fluid d-flex mb-0">
     <!-- Tombol menu pindah ke sini -->
-    <button id="toggleBtn" class="btn btn-outline-secondary me-3 p-2">
+    <button
+      id="toggleBtn"
+      class="btn btn-outline-secondary me-3 p-2 d-none d-sm-block"
+    >
       <i id="toggleIcon" data-feather="menu"></i>
+    </button>
+    <!-- TOGGLE BUTTON untuk MOBILE -->
+    <button
+      class="btn d-md-none"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#mobileSidebar"
+    >
+      <i data-feather="menu"></i>
     </button>
 
     <span class="navbar-brand fw-bold p-2">SIM LPPI</span>
 
     <div class="d-flex align-items-center ms-auto p-2">
-      <span class="me-3">Universitas Muhammadiyah Purwokerto</span>
+      <span class="me-3 d-none d-sm-block"
+        >Universitas Muhammadiyah Purwokerto</span
+      >
       <img
         src="/assets/img/LogoUMP.jpg"
         alt="Logo UMP"
