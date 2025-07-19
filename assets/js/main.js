@@ -185,6 +185,57 @@ function initMobileSidebar() {
 }
 
 // ==============================
+// FUNGSI: materimentor
+// ==============================
+
+let fileStates = {
+  materi: false,
+  tugas: false,
+};
+
+let deleteType = "";
+
+function uploadFile(type) {
+  fileStates[type] = true;
+  updateFileUI(type);
+}
+
+function deleteFile(type) {
+  deleteType = type;
+  const modalElement = document.getElementById("confirmDeleteModal");
+
+  if (!modalElement) {
+    console.error("Elemen modal 'confirmDeleteModal' tidak ditemukan.");
+    return;
+  }
+
+  const modal = new bootstrap.Modal(modalElement);
+  modal.show();
+
+  document.getElementById("btnConfirmDelete").onclick = () => {
+    fileStates[deleteType] = false;
+    updateFileUI(deleteType);
+    modal.hide();
+  };
+}
+
+function updateFileUI(type) {
+  const actionDiv = document.getElementById(`${type}Action`);
+  if (!actionDiv) return;
+
+  if (fileStates[type]) {
+    actionDiv.innerHTML = `
+        <a href="#" class="btn btn-outline-success btn-sm me-2">Lihat</a>
+        <button class="btn btn-outline-danger btn-sm" onclick="deleteFile('${type}')">Hapus</button>
+      `;
+  } else {
+    actionDiv.innerHTML = `
+        <button class="btn btn-outline-primary btn-sm" onclick="uploadFile('${type}')">Upload</button>
+      `;
+  }
+}
+
+// ==============================
 // FUNGSI: LOGOUT
 // ==============================
 function initLogout() {
