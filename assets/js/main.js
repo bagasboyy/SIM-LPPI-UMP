@@ -4,8 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
   initNavbarSidebar();
   initPendaftaranForm();
   initFeedback();
-  initLogout();
+  // initLogout();
   initMobileSidebar();
+  initPresensiPage();
 });
 
 // ==============================
@@ -72,6 +73,7 @@ function initNavbarSidebar() {
     });
 
   // Load Sidebar
+  // Load Sidebar
   fetch("/components/sidebar.html")
     .then((res) => res.text())
     .then((data) => {
@@ -86,6 +88,9 @@ function initNavbarSidebar() {
       });
 
       highlightActiveMenu();
+
+      // ⬅️ Tambahkan ini setelah sidebar dimuat
+      initLogout();
     })
     .catch((err) => console.error("Sidebar load error:", err));
 }
@@ -279,9 +284,13 @@ const menteePresensi = [
 ];
 
 // Render tabel presensi
+
 function renderPresensiTable() {
   const tbody = document.getElementById("attendanceTableBody");
+  if (!tbody) return; // ⬅️ Cegah error jika elemen tidak ada
   tbody.innerHTML = "";
+
+  // Sisanya sama
 
   menteePresensi.forEach((mentee, index) => {
     const tr = document.createElement("tr");
@@ -332,27 +341,34 @@ document.addEventListener("change", (e) => {
 });
 
 // Simulasi tombol save
-document.addEventListener("DOMContentLoaded", () => {
+function initPresensiPage() {
+  const saveButton = document.getElementById("saveButton");
+  if (!saveButton) return;
+
   renderPresensiTable();
 
-  document.getElementById("saveButton").addEventListener("click", () => {
+  saveButton.addEventListener("click", () => {
     console.log("Data tersimpan:", JSON.stringify(menteePresensi, null, 2));
     alert("Presensi berhasil disimpan!");
   });
-});
+}
 
 // ==============================
 // FUNGSI: LOGOUT
 // ==============================
 function initLogout() {
-  const logoutBtn = document.getElementById("logout-btn");
-  if (!logoutBtn) return;
+  const logoutDesktop = document.getElementById("logoutBtnDesktop");
+  const logoutMobile = document.getElementById("logoutBtnMobile");
 
-  logoutBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    if (confirm("Apakah Anda yakin ingin keluar?")) {
-      sessionStorage.clear();
-      window.location.href = "index.html";
+  [logoutDesktop, logoutMobile].forEach((btn) => {
+    if (btn) {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (confirm("Apakah Anda yakin ingin keluar?")) {
+          sessionStorage.clear();
+          window.location.href = "/index.html";
+        }
+      });
     }
   });
 }
