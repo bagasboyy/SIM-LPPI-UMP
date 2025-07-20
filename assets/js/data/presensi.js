@@ -1,0 +1,38 @@
+const menteePresensi = [
+  {
+    nama: "Sujakwi",
+    nim: "7309210023675",
+    presensi: [
+      "hadir",
+      "hadir",
+      "hadir",
+      "hadir",
+      "hadir",
+      "hadir",
+      "hadir",
+      "hadir",
+      "hadir",
+      "hadir",
+      "hadir",
+      "hadir",
+    ],
+  },
+  {
+    nama: "Rizki Andhini",
+    nim: "7282938472938",
+    presensi: [
+      "hadir",
+      "tidak",
+      "hadir",
+      "hadir",
+      "belum",
+      "hadir",
+      "tidak",
+      "hadir",
+      "hadir",
+      "hadir",
+      "hadir",
+      "hadir",
+    ],
+  },
+];

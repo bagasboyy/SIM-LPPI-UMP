@@ -236,6 +236,112 @@ function updateFileUI(type) {
 }
 
 // ==============================
+// FUNGSI: Presensi di mentor
+// ==============================
+
+const menteePresensi = [
+  {
+    nama: "Sujakwi",
+    nim: "7309210023675",
+    presensi: [
+      "hadir",
+      "hadir",
+      "hadir",
+      "hadir",
+      "hadir",
+      "hadir",
+      "hadir",
+      "hadir",
+      "hadir",
+      "hadir",
+      "hadir",
+      "hadir",
+    ],
+  },
+  {
+    nama: "Rizki Andhini",
+    nim: "7282938472938",
+    presensi: [
+      "hadir",
+      "tidak",
+      "hadir",
+      "hadir",
+      "belum",
+      "hadir",
+      "tidak",
+      "hadir",
+      "hadir",
+      "hadir",
+      "hadir",
+      "hadir",
+    ],
+  },
+];
+
+// Render tabel presensi
+function renderPresensiTable() {
+  const tbody = document.getElementById("attendanceTableBody");
+  tbody.innerHTML = "";
+
+  menteePresensi.forEach((mentee, index) => {
+    const tr = document.createElement("tr");
+
+    let presensiCells = mentee.presensi
+      .map((status, sesiIndex) => {
+        return `
+          <td>
+            <select data-row="${index}" data-sesi="${sesiIndex}">
+              <option value="belum" ${
+                status === "belum" ? "selected" : ""
+              }></option>
+              <option value="hadir" ${
+                status === "hadir" ? "selected" : ""
+              }>✅</option>
+              <option value="tidak" ${
+                status === "tidak" ? "selected" : ""
+              }>❌</option>
+            </select>
+          </td>
+        `;
+      })
+      .join("");
+
+    const totalHadir = mentee.presensi.filter((p) => p === "hadir").length;
+
+    tr.innerHTML = `
+      <td>${index + 1}</td>
+      <td>${mentee.nama}</td>
+      <td>${mentee.nim}</td>
+      ${presensiCells}
+      <td>${totalHadir}</td>
+    `;
+
+    tbody.appendChild(tr);
+  });
+}
+
+// Event listener untuk ubah presensi dari dropdown
+document.addEventListener("change", (e) => {
+  if (e.target.matches("select[data-row][data-sesi]")) {
+    const row = parseInt(e.target.dataset.row);
+    const sesi = parseInt(e.target.dataset.sesi);
+    const value = e.target.value;
+    menteePresensi[row].presensi[sesi] = value;
+    renderPresensiTable(); // refresh total hadir
+  }
+});
+
+// Simulasi tombol save
+document.addEventListener("DOMContentLoaded", () => {
+  renderPresensiTable();
+
+  document.getElementById("saveButton").addEventListener("click", () => {
+    console.log("Data tersimpan:", JSON.stringify(menteePresensi, null, 2));
+    alert("Presensi berhasil disimpan!");
+  });
+});
+
+// ==============================
 // FUNGSI: LOGOUT
 // ==============================
 function initLogout() {
