@@ -45,64 +45,65 @@
         >
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/dashboard.html">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">
-              Mentoring
+            <li class="breadcrumb-item">
+              <a href="/pages/tba/tba.html">Tes Baca Al-Qur'an</a>
             </li>
+            <li class="breadcrumb-item active" aria-current="page">Hasil</li>
           </ol>
         </nav>
 
         <!-- Main Content -->
         <main class="d-flex flex-column overflow-auto px-2">
-          <!-- card section -->
-          <section class="row g-3 flex-grow-1 p-4">
-            <div col-md-8>
-              <div class="card border-primary shadow mb-3">
-                <div class="card-body">
-                  <h5 class="card-title">Mentee</h5>
-                  <p class="card-text">
-                    Wajib diikuti mahasiswa baru sebagai syarat mengambil mata
-                    kuliah Kemuhammadiyahan.
-                  </p>
-                  <a
-                    href="/pages/mentoring/mentee/mentee.html"
-                    class="btn btn-primary btn-sm"
-                  >
-                    Lanjut
-                  </a>
-                </div>
+          <!-- Update Rekrutmen -->
+          <section class="container py-4">
+            <div class="card shadow-sm border-0">
+              <div
+                class="card-header bg-primary text-white d-flex align-items-center"
+              >
+                <i data-feather="file-text" class="me-2"></i>
+                <h5 class="mb-0">Seleksi Mentor</h5>
               </div>
-              <div class="card border-primary shadow mb-3">
-                <div class="card-body">
-                  <h5 class="card-title">Mentor</h5>
-                  <p class="card-text">
-                    Wajib diikuti mahasiswa baru sebagai syarat mengambil mata
-                    kuliah Kemuhammadiyahan.
-                  </p>
-                  <a
-                    href="/pages/mentoring/mentor/mentor.html"
-                    class="btn btn-primary btn-sm"
-                  >
-                    MENTOR
-                  </a>
+              <div class="card-body bg-light">
+                <!--#Function: Alur seleksi mentor-->
+                <div
+                  class="d-flex justify-content-center align-items-center flex-wrap gap-4 flow-container"
+                >
+                  <!-- Step 1 -->
+                  <div class="card-box">
+                    <strong>Mulai</strong>
+                  </div>
+
+                  <div class="arrow">→</div>
+
+                  <!-- Step 2 -->
+                  <div class="card-box">
+                    <strong>Wawancara</strong><br />
+                    Senin, 23 Juni 2025<br />
+                    13.00 - 15.00<br />
+                    Gedung A
+                  </div>
+
+                  <div class="arrow">→</div>
+
+                  <!-- Step 3 -->
+                  <div class="card-box">
+                    <strong>Hasil</strong><br />
+                    <span class="text-danger">Tidak Lulus</span>
+                  </div>
                 </div>
-              </div>
-              <div class="card border-primary shadow mb-3">
-                <div class="card-body">
-                  <h5 class="card-title">seleksi</h5>
-                  <p class="card-text">
-                    Wajib diikuti mahasiswa baru sebagai syarat mengambil mata
-                    kuliah Kemuhammadiyahan.
+
+                <!--#Function: Status akhir -->
+                <div class="status-box mt-4">
+                  <h6 class="mb-2">Status</h6>
+                  <span class="badge text-bg-danger">Tidak Lulus</span>
+                  <p class="mt-2 text-muted" style="font-size: 0.9rem">
+                    *Informasi lebih lanjut dapat menghubungi Admin.
                   </p>
-                  <a
-                    href="/pages/mentoring/seleksi/seleksi.html"
-                    class="btn btn-primary btn-sm"
-                  >
-                    SELEKSI
-                  </a>
                 </div>
               </div>
             </div>
           </section>
+
           <!-- Footer -->
           <footer class="text-center py-3 mt-5 bg-white border-top">
             <small

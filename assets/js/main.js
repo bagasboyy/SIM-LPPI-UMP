@@ -113,6 +113,15 @@ function highlightActiveMenu() {
     ) {
       link.classList.add("active");
     }
+    if (href.startsWith("/pages/tba") && currentPath.startsWith("/pages/tba")) {
+      link.classList.add("active");
+    }
+    if (
+      href.startsWith("/pages/bibaq") &&
+      currentPath.startsWith("/pages/bibaq")
+    ) {
+      link.classList.add("active");
+    }
   });
 }
 
