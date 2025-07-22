@@ -55,50 +55,185 @@
         <!-- Main Content -->
         <main class="d-flex flex-column overflow-auto px-2">
           <!-- Update Rekrutmen -->
-          <section class="container py-4">
+          <section class="container py-5">
             <div class="card shadow-sm border-0">
-              <div
-                class="card-header bg-primary text-white d-flex align-items-center"
-              >
-                <i data-feather="file-text" class="me-2"></i>
-                <h5 class="mb-0">Seleksi Mentor</h5>
+              <!--#Function: Alur seleksi mentor-->
+              <!-- Header -->
+              <div class="card mb-4 border-0 shadow-sm">
+                <div class="card-header bg-primary text-white text-center py-3">
+                  <h3 class="mb-0 fw-bold">
+                    <i data-feather="user-check" class="me-2"></i>Tes Baca
+                    Al-Qur'an
+                  </h3>
+                </div>
               </div>
-              <div class="card-body bg-light">
-                <!--#Function: Alur seleksi mentor-->
-                <div
-                  class="d-flex justify-content-center align-items-center flex-wrap gap-4 flow-container"
-                >
-                  <!-- Step 1 -->
-                  <div class="card-box">
-                    <strong>Mulai</strong>
-                  </div>
 
-                  <div class="arrow">→</div>
-
-                  <!-- Step 2 -->
-                  <div class="card-box">
-                    <strong>Wawancara</strong><br />
-                    Senin, 23 Juni 2025<br />
-                    13.00 - 15.00<br />
-                    Gedung A
-                  </div>
-
-                  <div class="arrow">→</div>
-
-                  <!-- Step 3 -->
-                  <div class="card-box">
-                    <strong>Hasil</strong><br />
-                    <span class="text-danger">Tidak Lulus</span>
+              <!-- Flow Container -->
+              <div class="row justify-content-center align-items-stretch g-3">
+                <!-- Step 1: Mulai -->
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                  <div class="card h-100 shadow-sm border-success">
+                    <div
+                      class="card-body text-center d-flex flex-column justify-content-center position-relative"
+                    >
+                      <span
+                        class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary"
+                        >1</span
+                      >
+                      <div class="text-success mb-3">
+                        <i
+                          data-feather="play-circle"
+                          width="32"
+                          height="32"
+                        ></i>
+                      </div>
+                      <h5 class="card-title fw-bold">Mulai</h5>
+                      <p class="card-text text-success small mb-0">
+                        <i
+                          data-feather="check-circle"
+                          width="16"
+                          height="16"
+                          class="me-1"
+                        ></i
+                        >Selesai
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                <!--#Function: Status akhir -->
-                <div class="status-box mt-4">
-                  <h6 class="mb-2">Status</h6>
-                  <span class="badge text-bg-danger">Tidak Lulus</span>
-                  <p class="mt-2 text-muted" style="font-size: 0.9rem">
-                    *Informasi lebih lanjut dapat menghubungi Admin.
-                  </p>
+                <!-- Arrow 1 -->
+                <div
+                  class="col-12 col-md-1 d-flex align-items-center justify-content-center py-2"
+                >
+                  <i
+                    data-feather="arrow-right"
+                    class="d-none d-md-inline text-secondary"
+                    width="24"
+                    height="24"
+                  ></i>
+                  <i
+                    data-feather="arrow-down"
+                    class="d-md-none text-secondary"
+                    width="24"
+                    height="24"
+                  ></i>
+                </div>
+
+                <!-- Step 2: Tes TBA -->
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                  <div class="card h-100 shadow-sm border-success">
+                    <div
+                      class="card-body text-center d-flex flex-column justify-content-center position-relative"
+                    >
+                      <span
+                        class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary"
+                        >2</span
+                      >
+                      <div class="text-success mb-3">
+                        <i data-feather="clipboard" width="32" height="32"></i>
+                      </div>
+                      <h5 class="card-title fw-bold">Tes TBA</h5>
+                      <div class="small text-muted">
+                        <div class="fw-semibold text-primary">
+                          Senin, 23 Juni 2025
+                        </div>
+                        <div>13:00 - 15:00</div>
+                        <div>Gedung A</div>
+                      </div>
+                      <p class="card-text text-success small mb-0 mt-2">
+                        <i
+                          data-feather="check-circle"
+                          width="16"
+                          height="16"
+                          class="me-1"
+                        ></i
+                        >Selesai
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Arrow 2 -->
+                <div
+                  class="col-12 col-md-1 d-flex align-items-center justify-content-center py-2"
+                >
+                  <i
+                    data-feather="arrow-right"
+                    class="d-none d-md-inline text-secondary"
+                    width="24"
+                    height="24"
+                  ></i>
+                  <i
+                    data-feather="arrow-down"
+                    class="d-md-none text-secondary"
+                    width="24"
+                    height="24"
+                  ></i>
+                </div>
+
+                <!-- Step 3: Hasil -->
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                  <div class="card h-100 shadow-sm border-danger">
+                    <div
+                      class="card-body text-center d-flex flex-column justify-content-center position-relative"
+                    >
+                      <span
+                        class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary"
+                        >4</span
+                      >
+                      <div class="text-danger mb-3">
+                        <i data-feather="flag" width="32" height="32"></i>
+                      </div>
+                      <h5 class="card-title fw-bold">Hasil</h5>
+                      <div
+                        class="alert alert-danger py-2 mb-0 mt-2"
+                        role="alert"
+                      >
+                        <i
+                          data-feather="x-circle"
+                          width="16"
+                          height="16"
+                          class="me-2"
+                        ></i>
+                        <strong>Tidak Lulus</strong>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--#Function: Status akhir -->
+              <div class="status-box mt-4">
+                <h6 class="mb-2">Status</h6>
+                <div class="span-status">
+                  <span class="badge text-bg-danger text-center"
+                    >Tidak Lulus</span
+                  >
+                </div>
+                <p class="mt-2 text-muted" style="font-size: 0.9rem">
+                  *Jika status keterangan lulus, Tidak Perlu Ikut BIBAQ.
+                </p>
+                <p class="mt-2 text-muted" style="font-size: 0.9rem">
+                  *Jika status keterangan Tidak lulus, Harus mengikuti BIBAQ dan
+                  setelah selesai, lakukan pendaftaran lagi dan tes TBA ulang.
+                </p>
+              </div>
+
+              <!-- Progress Information -->
+              <div class="card mt-4 border-0 shadow-sm">
+                <div class="card-body text-center bg-light">
+                  <div class="text-muted">
+                    <i
+                      data-feather="info"
+                      width="16"
+                      height="16"
+                      class="me-2"
+                    ></i>
+                    <small
+                      >Proses Tes telah selesai. Terima kasih atas
+                      partisipasinya.</small
+                    >
+                  </div>
                 </div>
               </div>
             </div>

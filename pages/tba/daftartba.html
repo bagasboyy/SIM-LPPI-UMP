@@ -60,7 +60,8 @@
           <section class="container mt-5 mb-5">
             <div class="card shadow p-4">
               <h5 class="mb-4 text-primary">
-                <i data-feather="edit-3"></i> Pendaftaran Tes Baca Al-Qur'an
+                <i data-feather="edit-3"></i>
+                <strong>Pendaftaran Tes Baca Al-Qur'an</strong>
               </h5>
 
               <form id="formPendaftaran">
@@ -93,17 +94,6 @@
                       type="text"
                       class="form-control"
                       name="nim"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <label class="col-sm-3 col-form-label">Angkatan</label>
-                  <div class="col-sm-9">
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="angkatan"
                       required
                     />
                   </div>
@@ -159,11 +149,6 @@
                   </button>
                 </div>
               </form>
-
-              <p class="text-muted mt-3" style="font-size: 0.9rem">
-                *Form pendaftaran ini berlaku untuk daftar ulang bagi yang belum
-                lulus Mentoring.
-              </p>
             </div>
           </section>
 
@@ -229,7 +214,7 @@
                 <h5 class="mb-3" id="suksesLabel">Berhasil Submit</h5>
                 <button
                   type="button"
-                  class="btn btn-primary"
+                  class="btn btn-primary btn-sm equal-width-btn"
                   data-bs-dismiss="modal"
                 >
                   Tutup
@@ -237,56 +222,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Update Rekrutmen -->
-          <section class="container py-4">
-            <div class="card shadow-sm border-0">
-              <div
-                class="card-header bg-primary text-white d-flex align-items-center"
-              >
-                <i data-feather="file-text" class="me-2"></i>
-                <h5 class="mb-0">Seleksi Mentor</h5>
-              </div>
-              <div class="card-body bg-light">
-                <!--#Function: Alur seleksi mentor-->
-                <div
-                  class="d-flex justify-content-center align-items-center flex-wrap gap-4 flow-container"
-                >
-                  <!-- Step 1 -->
-                  <div class="card-box">
-                    <strong>Mulai</strong>
-                  </div>
-
-                  <div class="arrow">→</div>
-
-                  <!-- Step 2 -->
-                  <div class="card-box">
-                    <strong>Wawancara</strong><br />
-                    Senin, 23 Juni 2025<br />
-                    13.00 - 15.00<br />
-                    Gedung A
-                  </div>
-
-                  <div class="arrow">→</div>
-
-                  <!-- Step 3 -->
-                  <div class="card-box">
-                    <strong>Hasil</strong><br />
-                    <span class="text-danger">Tidak Lulus</span>
-                  </div>
-                </div>
-
-                <!--#Function: Status akhir -->
-                <div class="status-box mt-4">
-                  <h6 class="mb-2">Status</h6>
-                  <span class="badge text-bg-danger">Tidak Lulus</span>
-                  <p class="mt-2 text-muted" style="font-size: 0.9rem">
-                    *Informasi lebih lanjut dapat menghubungi Admin.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
 
           <!-- Footer -->
           <footer class="text-center py-3 mt-5 bg-white border-top">
