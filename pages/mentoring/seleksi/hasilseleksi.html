@@ -49,213 +49,16 @@
               <a href="/pages/mentoring/mentoring.html">Mentoring</a>
             </li>
             <li class="breadcrumb-item">
-              <a href="/pages/mentoring/mentor/mentor.html">Mentor</a>
+              <a href="/pages/mentoring/seleksi/seleksi.html">Seleksi</a>
             </li>
-            <li class="breadcrumb-item active" aria-current="page">Daftar</li>
+            <li class="breadcrumb-item active" aria-current="page">Hasil</li>
           </ol>
         </nav>
 
         <!-- Main Content -->
         <main class="d-flex flex-column overflow-auto px-2">
-          <!-- Main Konten Form Pendaftaran Mentoring -->
-          <section class="container mt-5 mb-5">
-            <div class="card shadow p-4">
-              <h5 class="mb-4 text-primary">
-                <i data-feather="edit-3"></i>
-                <strong>Pendaftaran Mentor</strong>
-              </h5>
-
-              <form id="formPendaftaranMentor">
-                <div class="row mb-3">
-                  <label class="col-sm-3 col-form-label">Nama</label>
-                  <div class="col-sm-9">
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="nama"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <label class="col-sm-3 col-form-label">Email</label>
-                  <div class="col-sm-9">
-                    <input
-                      type="email"
-                      class="form-control"
-                      name="email"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <label class="col-sm-3 col-form-label">NIM</label>
-                  <div class="col-sm-9">
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="nim"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <label class="col-sm-3 col-form-label">Angkatan</label>
-                  <div class="col-sm-9">
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="angkatan"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <label class="col-sm-3 col-form-label">Prodi</label>
-                  <div class="col-sm-9">
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="prodi"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <label class="col-sm-3 col-form-label">Fakultas</label>
-                  <div class="col-sm-9">
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="fakultas"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <label class="col-sm-3 col-form-label">Jenis Kelamin</label>
-                  <div class="col-sm-9">
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="jk"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="row mb-4">
-                  <label class="col-sm-3 col-form-label">No. HP/WA</label>
-                  <div class="col-sm-9">
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="hp"
-                      required
-                    />
-                  </div>
-                </div>
-                <!-- Upload File -->
-                <div class="row mb-4">
-                  <label class="col-sm-3 col-form-label">Sertifikat TBA</label>
-                  <div class="col-sm-9">
-                    <input
-                      class="form-control"
-                      type="file"
-                      id="filesertiftbaMentor"
-                    />
-                  </div>
-                </div>
-
-                <div class="text-center">
-                  <button
-                    type="submit"
-                    class="btn btn-primary btn-sm equal-width-btn"
-                  >
-                    Submit
-                  </button>
-                </div>
-              </form>
-
-              <p class="text-muted mt-3" style="font-size: 0.9rem">
-                *Form pendaftaran ini berlaku untuk daftar ulang bagi yang belum
-                lulus Mentoring.
-              </p>
-            </div>
-          </section>
-
-          <!-- Modal Konfirmasi -->
-          <div
-            class="modal fade"
-            id="konfirmasiModalMentor"
-            tabindex="-1"
-            aria-labelledby="konfirmasiLabel"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content p-3">
-                <div class="modal-header border-0">
-                  <h5 class="modal-title" id="konfirmasiLabel">Konfirmasi</h5>
-                  <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Tutup"
-                  ></button>
-                </div>
-                <div class="modal-body">
-                  Apakah Anda yakin data sudah benar?
-                </div>
-                <div class="modal-footer border-0">
-                  <button
-                    type="button"
-                    class="btn btn-secondary"
-                    data-bs-dismiss="modal"
-                  >
-                    Tidak
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-success"
-                    id="btnYaSubmitMentor"
-                  >
-                    Ya
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Modal Sukses -->
-          <div
-            class="modal fade"
-            id="suksesModalMentor"
-            tabindex="-1"
-            aria-labelledby="suksesLabel"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content text-center p-4">
-                <div class="mb-3">
-                  <i
-                    class="text-success"
-                    data-feather="check-circle"
-                    style="width: 48px; height: 48px"
-                  ></i>
-                </div>
-                <h5 class="mb-3" id="suksesLabel">Berhasil Submit</h5>
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  data-bs-dismiss="modal"
-                >
-                  Tutup
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Update Rekrutmen -->
-          <section class="container py-5">
+          <!-- Update Rekrutmen Mentor-->
+          <section class="container py-3 px-1">
             <div class="card shadow-sm border-0">
               <!--#Function: Alur seleksi mentor-->
               <!-- Header -->
@@ -263,10 +66,8 @@
                 <div class="card-header bg-primary text-white text-center py-3">
                   <h3 class="mb-0 fw-bold">
                     <i data-feather="user-check" class="me-2"></i>Seleksi Mentor
+                    Berprestasi
                   </h3>
-                  <p class="mb-0 mt-2 opacity-75">
-                    Proses seleksi calon mentor tahap 2025
-                  </p>
                 </div>
               </div>
 
@@ -321,7 +122,7 @@
                   ></i>
                 </div>
 
-                <!-- Step 2: Tes Pengetahuan -->
+                <!-- Step 2: Tes TBA -->
                 <div class="col-lg-2 col-md-3 col-sm-6">
                   <div class="card h-100 shadow-sm border-success">
                     <div
@@ -334,7 +135,7 @@
                       <div class="text-success mb-3">
                         <i data-feather="clipboard" width="32" height="32"></i>
                       </div>
-                      <h5 class="card-title fw-bold">Tes Akademik</h5>
+                      <h5 class="card-title fw-bold">Tes Pengetahuan</h5>
                       <div class="small text-muted">
                         <div class="fw-semibold text-primary">
                           Senin, 23 Juni 2025
@@ -373,63 +174,7 @@
                   ></i>
                 </div>
 
-                <!-- Step 3: Wawancara -->
-                <div class="col-lg-2 col-md-3 col-sm-6">
-                  <div class="card h-100 shadow-sm border-success">
-                    <div
-                      class="card-body text-center d-flex flex-column justify-content-center position-relative"
-                    >
-                      <span
-                        class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary"
-                        >3</span
-                      >
-                      <div class="text-success mb-3">
-                        <i
-                          data-feather="message-circle"
-                          width="32"
-                          height="32"
-                        ></i>
-                      </div>
-                      <h5 class="card-title fw-bold">Wawancara</h5>
-                      <div class="small text-muted">
-                        <div class="fw-semibold text-primary">
-                          Senin, 23 Juni 2025
-                        </div>
-                        <div>13:00 - 15:00</div>
-                        <div>Gedung A</div>
-                      </div>
-                      <p class="card-text text-success small mb-0 mt-2">
-                        <i
-                          data-feather="check-circle"
-                          width="16"
-                          height="16"
-                          class="me-1"
-                        ></i
-                        >Selesai
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Arrow 3 -->
-                <div
-                  class="col-12 col-md-1 d-flex align-items-center justify-content-center py-2"
-                >
-                  <i
-                    data-feather="arrow-right"
-                    class="d-none d-md-inline text-secondary"
-                    width="24"
-                    height="24"
-                  ></i>
-                  <i
-                    data-feather="arrow-down"
-                    class="d-md-none text-secondary"
-                    width="24"
-                    height="24"
-                  ></i>
-                </div>
-
-                <!-- Step 4: Hasil -->
+                <!-- Step 3: Hasil -->
                 <div class="col-lg-2 col-md-3 col-sm-6">
                   <div class="card h-100 shadow-sm border-danger">
                     <div
@@ -469,7 +214,11 @@
                   >
                 </div>
                 <p class="mt-2 text-muted" style="font-size: 0.9rem">
-                  *Informasi lebih lanjut dapat menghubungi Admin.
+                  *Jika status keterangan lulus, Tidak Perlu Ikut BIBAQ.
+                </p>
+                <p class="mt-2 text-muted" style="font-size: 0.9rem">
+                  *Jika status keterangan Tidak lulus, Harus mengikuti BIBAQ dan
+                  setelah selesai, lakukan pendaftaran lagi dan tes TBA ulang.
                 </p>
               </div>
 
@@ -484,7 +233,192 @@
                       class="me-2"
                     ></i>
                     <small
-                      >Proses seleksi telah selesai. Terima kasih atas
+                      >Proses Tes telah selesai. Terima kasih atas
+                      partisipasinya.</small
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Update Rekrutmen Mentee-->
+          <section class="container py-3 px-1">
+            <div class="card shadow-sm border-0">
+              <!--#Function: Alur seleksi mentor-->
+              <!-- Header -->
+              <div class="card mb-4 border-0 shadow-sm">
+                <div class="card-header bg-primary text-white text-center py-3">
+                  <h3 class="mb-0 fw-bold">
+                    <i data-feather="user-check" class="me-2"></i>Seleksi Mentee
+                    Berprestasi
+                  </h3>
+                </div>
+              </div>
+
+              <!-- Flow Container -->
+              <div class="row justify-content-center align-items-stretch g-3">
+                <!-- Step 1: Mulai -->
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                  <div class="card h-100 shadow-sm border-success">
+                    <div
+                      class="card-body text-center d-flex flex-column justify-content-center position-relative"
+                    >
+                      <span
+                        class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary"
+                        >1</span
+                      >
+                      <div class="text-success mb-3">
+                        <i
+                          data-feather="play-circle"
+                          width="32"
+                          height="32"
+                        ></i>
+                      </div>
+                      <h5 class="card-title fw-bold">Mulai</h5>
+                      <p class="card-text text-success small mb-0">
+                        <i
+                          data-feather="check-circle"
+                          width="16"
+                          height="16"
+                          class="me-1"
+                        ></i
+                        >Selesai
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Arrow 1 -->
+                <div
+                  class="col-12 col-md-1 d-flex align-items-center justify-content-center py-2"
+                >
+                  <i
+                    data-feather="arrow-right"
+                    class="d-none d-md-inline text-secondary"
+                    width="24"
+                    height="24"
+                  ></i>
+                  <i
+                    data-feather="arrow-down"
+                    class="d-md-none text-secondary"
+                    width="24"
+                    height="24"
+                  ></i>
+                </div>
+
+                <!-- Step 2: Tes TBA -->
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                  <div class="card h-100 shadow-sm border-success">
+                    <div
+                      class="card-body text-center d-flex flex-column justify-content-center position-relative"
+                    >
+                      <span
+                        class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary"
+                        >2</span
+                      >
+                      <div class="text-success mb-3">
+                        <i data-feather="clipboard" width="32" height="32"></i>
+                      </div>
+                      <h5 class="card-title fw-bold">Tes Pengetahuan</h5>
+                      <div class="small text-muted">
+                        <div class="fw-semibold text-primary">
+                          Senin, 23 Juni 2025
+                        </div>
+                        <div>13:00 - 15:00</div>
+                        <div>Gedung A</div>
+                      </div>
+                      <p class="card-text text-success small mb-0 mt-2">
+                        <i
+                          data-feather="check-circle"
+                          width="16"
+                          height="16"
+                          class="me-1"
+                        ></i
+                        >Selesai
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Arrow 2 -->
+                <div
+                  class="col-12 col-md-1 d-flex align-items-center justify-content-center py-2"
+                >
+                  <i
+                    data-feather="arrow-right"
+                    class="d-none d-md-inline text-secondary"
+                    width="24"
+                    height="24"
+                  ></i>
+                  <i
+                    data-feather="arrow-down"
+                    class="d-md-none text-secondary"
+                    width="24"
+                    height="24"
+                  ></i>
+                </div>
+
+                <!-- Step 3: Hasil -->
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                  <div class="card h-100 shadow-sm border-danger">
+                    <div
+                      class="card-body text-center d-flex flex-column justify-content-center position-relative"
+                    >
+                      <span
+                        class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary"
+                        >4</span
+                      >
+                      <div class="text-danger mb-3">
+                        <i data-feather="flag" width="32" height="32"></i>
+                      </div>
+                      <h5 class="card-title fw-bold">Hasil</h5>
+                      <div
+                        class="alert alert-danger py-2 mb-0 mt-2"
+                        role="alert"
+                      >
+                        <i
+                          data-feather="x-circle"
+                          width="16"
+                          height="16"
+                          class="me-2"
+                        ></i>
+                        <strong>Tidak Lulus</strong>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--#Function: Status akhir -->
+              <div class="status-box mt-4">
+                <h6 class="mb-2">Status</h6>
+                <div class="span-status">
+                  <span class="badge text-bg-danger text-center"
+                    >Tidak Lulus</span
+                  >
+                </div>
+                <p class="mt-2 text-muted" style="font-size: 0.9rem">
+                  *Jika status keterangan lulus, Tidak Perlu Ikut BIBAQ.
+                </p>
+                <p class="mt-2 text-muted" style="font-size: 0.9rem">
+                  *Jika status keterangan Tidak lulus, Harus mengikuti BIBAQ dan
+                  setelah selesai, lakukan pendaftaran lagi dan tes TBA ulang.
+                </p>
+              </div>
+
+              <!-- Progress Information -->
+              <div class="card mt-4 border-0 shadow-sm">
+                <div class="card-body text-center bg-light">
+                  <div class="text-muted">
+                    <i
+                      data-feather="info"
+                      width="16"
+                      height="16"
+                      class="me-2"
+                    ></i>
+                    <small
+                      >Proses Tes telah selesai. Terima kasih atas
                       partisipasinya.</small
                     >
                   </div>

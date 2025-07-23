@@ -2,9 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
   feather.replace();
   initLoginForm();
   initNavbarSidebar();
-  initPendaftaranForm();
+  initPendaftaranFormSeleksi();
+  initPendaftaranFormMentee();
+  initPendaftaranFormMentor();
+  initPendaftaranFormTBA();
+  initPendaftaranFormBIBAQ();
   initFeedback();
-  // initLogout();
   initMobileSidebar();
   initPresensiPage();
 });
@@ -126,9 +129,9 @@ function highlightActiveMenu() {
 }
 
 // ==============================
-// FUNGSI: FORM PENDAFTARAN
+// FUNGSI: FORM PENDAFTARAN halaman Seleksi
 // ==============================
-function initPendaftaranForm() {
+function initPendaftaranFormSeleksi() {
   const form = document.getElementById("formPendaftaran");
   const konfirmasiModal = safeModal("konfirmasiModal");
   const suksesModal = safeModal("suksesModal");
@@ -137,7 +140,163 @@ function initPendaftaranForm() {
   if (!form || !btnYaSubmit || !konfirmasiModal || !suksesModal) return;
 
   form.addEventListener("submit", (e) => {
+    e.preventDefault(); // Jangan kirim form langsung
+
+    const selectedValue = document.getElementById("inputGroupSelect01").value;
+    const fileMotivasi = document.getElementById("filemotivasi");
+    const fileTranskripNilai = document.getElementById("filetranskripnilai");
+    const fileSertifTBA = document.getElementById("filesertiftba");
+    const fileSertifMentoring = document.getElementById("filesertifmentoring");
+    const fileRekomendasi = document.getElementById("filerekomendasi");
+
+    if (!selectedValue) {
+      alert("Silakan pilih peran Anda terlebih dahulu.");
+      return;
+    }
+
+    if (!fileMotivasi || fileMotivasi.files.length === 0) {
+      alert("Silakan upload file terlebih dahulu.");
+      return;
+    }
+    if (!fileTranskripNilai || fileTranskripNilai.files.length === 0) {
+      alert("Silakan upload file terlebih dahulu.");
+      return;
+    }
+    if (!fileSertifTBA || fileSertifTBA.files.length === 0) {
+      alert("Silakan upload file terlebih dahulu.");
+      return;
+    }
+    if (!fileSertifMentoring || fileSertifMentoring.files.length === 0) {
+      alert("Silakan upload file terlebih dahulu.");
+      return;
+    }
+    if (!fileRekomendasi || fileRekomendasi.files.length === 0) {
+      alert("Silakan upload file terlebih dahulu.");
+      return;
+    }
+
+    // Tampilkan modal konfirmasi
+    konfirmasiModal.show();
+  });
+
+  btnYaSubmit.addEventListener("click", () => {
+    // Tutup modal konfirmasi, tampilkan modal sukses
+    konfirmasiModal.hide();
+    suksesModal.show();
+
+    // Reset form setelah 1 detik
+    setTimeout(() => form.reset(), 1000);
+  });
+}
+
+// ==============================
+// FUNGSI: FORM PENDAFTARAN halaman Mentee
+// ==============================
+function initPendaftaranFormMentee() {
+  const form = document.getElementById("formPendaftaranMentee");
+  const konfirmasiModal = safeModal("konfirmasiModalMentee");
+  const suksesModal = safeModal("suksesModalMentee");
+  const btnYaSubmit = document.getElementById("btnYaSubmitMentee");
+
+  if (!form || !btnYaSubmit || !konfirmasiModal || !suksesModal) return;
+
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
+    konfirmasiModal.show();
+  });
+
+  btnYaSubmit.addEventListener("click", () => {
+    konfirmasiModal.hide();
+    suksesModal.show();
+    setTimeout(() => form.reset(), 1000);
+  });
+}
+
+// ==============================
+// FUNGSI: FORM PENDAFTARAN halaman mentor
+// ==============================
+function initPendaftaranFormMentor() {
+  const form = document.getElementById("formPendaftaranMentor");
+  const konfirmasiModal = safeModal("konfirmasiModalMentor");
+  const suksesModal = safeModal("suksesModalMentor");
+  const btnYaSubmit = document.getElementById("btnYaSubmitMentor");
+
+  if (!form || !btnYaSubmit || !konfirmasiModal || !suksesModal) return;
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault(); // Jangan kirim form langsung
+    const fileSertifTBAMentor = document.getElementById("filesertiftbaMentor");
+
+    if (!fileSertifTBAMentor || fileSertifTBAMentor.files.length === 0) {
+      alert("Silakan upload file terlebih dahulu.");
+      return;
+    }
+
+    // Tampilkan modal konfirmasi
+    konfirmasiModal.show();
+  });
+
+  btnYaSubmit.addEventListener("click", () => {
+    // Tutup modal konfirmasi, tampilkan modal sukses
+    konfirmasiModal.hide();
+    suksesModal.show();
+
+    // Reset form setelah 1 detik
+    setTimeout(() => form.reset(), 1000);
+  });
+}
+
+// ==============================
+// FUNGSI: FORM PENDAFTARAN halaman TBA
+// ==============================
+function initPendaftaranFormTBA() {
+  const form = document.getElementById("formPendaftaranTBA");
+  const konfirmasiModal = safeModal("konfirmasiModalTBA");
+  const suksesModal = safeModal("suksesModalTBA");
+  const btnYaSubmit = document.getElementById("btnYaSubmitTBA");
+
+  if (!form || !btnYaSubmit || !konfirmasiModal || !suksesModal) return;
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    konfirmasiModal.show();
+  });
+
+  btnYaSubmit.addEventListener("click", () => {
+    konfirmasiModal.hide();
+    suksesModal.show();
+    setTimeout(() => form.reset(), 1000);
+  });
+}
+
+// ==============================
+// FUNGSI: FORM PENDAFTARAN halaman bibaq
+// ==============================
+function initPendaftaranFormBIBAQ() {
+  console.log("Fungsi initPendaftaranFormBIBAQ dipanggil");
+
+  const form = document.getElementById("formPendaftaranBIBAQ");
+  const konfirmasiModal = safeModal("konfirmasiModalBIBAQ");
+  const suksesModal = safeModal("suksesModalBIBAQ");
+  const btnYaSubmit = document.getElementById("btnYaSubmitBIBAQ");
+
+  if (!form || !btnYaSubmit || !konfirmasiModal || !suksesModal) {
+    console.log("Ada elemen yang tidak ditemukan");
+    return;
+  }
+
+  form.addEventListener("submit", (e) => {
+    console.log("Form disubmit");
+    e.preventDefault();
+
+    const pernyataanTextarea = document.getElementById("pernyataanBIBAQ");
+
+    if (!pernyataanTextarea || pernyataanTextarea.value.trim() === "") {
+      alert("Silakan isi pernyataan terlebih dahulu.");
+      return;
+    }
+
+    console.log("Validasi berhasil, tampilkan modal");
     konfirmasiModal.show();
   });
 

@@ -56,75 +56,76 @@
 
         <!-- Main Content -->
         <main class="d-flex flex-column overflow-auto px-2">
-          <!-- Section: Cetak Sertifikat -->
-          <section class="flex-grow-1 p-4">
-            <div class="bg-dark text-white px-4 py-2 rounded-top">
-              <h5 class="mb-0">Cetak Sertifikat</h5>
-            </div>
-            <div
-              class="bg-light px-4 py-3 rounded-bottom"
-              style="background-color: #e7e3fd !important"
-            >
-              <div class="d-flex justify-content-between align-items-center">
-                <span class="fw-semibold">Cetak Sertifikat Mentor</span>
-                <a href="#" class="btn btn-light btn-sm">
-                  <i data-feather="download" class="me-1"></i>Download
-                </a>
-              </div>
-            </div>
-          </section>
-          <section class="flex-grow-1 p-4">
-            <!-- Card Biodata Mentor -->
-            <div class="card mb-4 bg-light-subtle border-primary shadow-sm">
-              <div class="row g-0 align-items-center">
-                <div class="col-md-10">
-                  <div class="card-body">
-                    <h5 class="card-title">
-                      <i data-feather="user" class="me-2"></i>Biodata Mentor
-                      Pembimbing
-                    </h5>
-                    <p class="mb-1"><strong>NIM:</strong> 26543486923458</p>
-                    <p class="mb-1"><strong>Nama:</strong> Kurnia Yanto</p>
-                    <p class="mb-1">
-                      <strong>Prodi:</strong> Teknik Informatika
-                    </p>
-                    <p class="mb-1">
-                      <strong>Fakultas:</strong> Sains dan Teknik
-                    </p>
-                    <p class="mb-0"><strong>No. HP/WA:</strong> 089XXXXXXXXX</p>
+          <!-- card section -->
+          <section class="row g-3 flex-grow-1 p-4">
+            <div class="col-md-8">
+              <!-- Card Biodata Mentor -->
+              <div class="bg-light-subtle border-primary shadow-sm rounded">
+                <div class="row g-0 align-items-center">
+                  <div class="col-md-9">
+                    <div class="card-body">
+                      <h5 class="card-title px-5 py-3">
+                        <i data-feather="user" class="me-2"></i
+                        ><strong>Biodata Dosen Pembimbing</strong>
+                      </h5>
+                      <p class="px-5 fs-5">
+                        <strong>Nama:</strong> Kurnianti Yanti
+                      </p>
+                      <p class="px-5 fs-5">
+                        <strong>NIDN:</strong> 12323434567688
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-2 text-center">
+                    <img
+                      src="/assets/img/potoprofil.png"
+                      class="img-fluid rounded-circle m-3"
+                      alt="Foto Mentor"
+                      width="120"
+                    />
                   </div>
                 </div>
-                <div class="col-md-2 text-center">
-                  <img
-                    src="https://i.imgur.com/0y0y0y0.png"
-                    class="img-fluid rounded-circle m-3"
-                    alt="Foto Mentor"
-                    width="100"
-                  />
+              </div>
+            </div>
+
+            <!-- Cetak Sertifikat -->
+            <div class="col-md-4">
+              <div class="bg-dark text-white px-2 py-2 rounded-top">
+                <h6 class="mb-0">Cetak Sertifikat</h6>
+              </div>
+              <div
+                class="bg-light px-2 py-2 rounded-bottom"
+                style="background-color: #e7e3fd !important"
+              >
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-regular">Cetak Sertifikat BIBAQ</span>
+                  <a href="#" class="btn btn-light btn-sm">
+                    <i data-feather="download" class="me-1"></i>Download
+                  </a>
                 </div>
               </div>
             </div>
           </section>
 
           <!-- informasi mentee section -->
-          <section class="flex-grow-1 p-4">
+          <section class="flex-grow-1 px-4 py-2">
             <div>
               <!-- Track Presensi Kehadiran -->
-              <div class="card border-secondary mb-4">
-                <div class="card-header bg-light fw-semibold">
+              <div class="card border-secondary">
+                <div class="card-header bg-light fw-bold fs-5">
                   <i data-feather="clock" class="me-1"></i> Presensi Kehadiran
-                  Mentoring
+                  Bimbingan
                 </div>
                 <div class="card-body">
                   <div class="row mb-3">
                     <div class="col-md-4">
-                      <strong>Jumlah Kehadiran:</strong> 9
+                      <strong>Jumlah Kehadiran:</strong> 12
                     </div>
                     <div class="col-md-4">
-                      <strong>Jumlah Pertemuan:</strong> 10
+                      <strong>Jumlah Pertemuan:</strong> 12
                     </div>
                     <div class="col-md-4">
-                      <strong>Persentase Pertemuan:</strong> 90%
+                      <strong>Persentase Pertemuan:</strong> 100%
                     </div>
                   </div>
 
@@ -159,7 +160,10 @@
                           <td><i data-feather="calendar"></i> 2025-06-20</td>
                           <td><i data-feather="clock"></i> 04:10:00</td>
                           <td>
-                            <i data-feather="x-circle" class="text-danger"></i>
+                            <i
+                              data-feather="check-circle"
+                              class="text-success"
+                            ></i>
                           </td>
                         </tr>
                         <tr>
@@ -173,7 +177,105 @@
                             ></i>
                           </td>
                         </tr>
-                        <!-- Tambahkan baris lainnya sesuai kebutuhan -->
+                        <tr>
+                          <td><i data-feather="list"></i> Sesi 4</td>
+                          <td><i data-feather="calendar"></i> 2025-06-20</td>
+                          <td><i data-feather="clock"></i> 04:10:00</td>
+                          <td>
+                            <i
+                              data-feather="check-circle"
+                              class="text-success"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><i data-feather="list"></i> Sesi 5</td>
+                          <td><i data-feather="calendar"></i> 2025-06-20</td>
+                          <td><i data-feather="clock"></i> 04:10:00</td>
+                          <td>
+                            <i
+                              data-feather="check-circle"
+                              class="text-success"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><i data-feather="list"></i> Sesi 6</td>
+                          <td><i data-feather="calendar"></i> 2025-06-20</td>
+                          <td><i data-feather="clock"></i> 04:10:00</td>
+                          <td>
+                            <i
+                              data-feather="check-circle"
+                              class="text-success"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><i data-feather="list"></i> Sesi 7</td>
+                          <td><i data-feather="calendar"></i> 2025-06-20</td>
+                          <td><i data-feather="clock"></i> 04:10:00</td>
+                          <td>
+                            <i
+                              data-feather="check-circle"
+                              class="text-success"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><i data-feather="list"></i> Sesi 8</td>
+                          <td><i data-feather="calendar"></i> 2025-06-20</td>
+                          <td><i data-feather="clock"></i> 04:10:00</td>
+                          <td>
+                            <i
+                              data-feather="check-circle"
+                              class="text-success"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><i data-feather="list"></i> Sesi 9</td>
+                          <td><i data-feather="calendar"></i> 2025-06-20</td>
+                          <td><i data-feather="clock"></i> 04:10:00</td>
+                          <td>
+                            <i
+                              data-feather="check-circle"
+                              class="text-success"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><i data-feather="list"></i> Sesi 10</td>
+                          <td><i data-feather="calendar"></i> 2025-06-20</td>
+                          <td><i data-feather="clock"></i> 04:10:00</td>
+                          <td>
+                            <i
+                              data-feather="check-circle"
+                              class="text-success"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><i data-feather="list"></i> Sesi 11</td>
+                          <td><i data-feather="calendar"></i> 2025-06-20</td>
+                          <td><i data-feather="clock"></i> 04:10:00</td>
+                          <td>
+                            <i
+                              data-feather="check-circle"
+                              class="text-success"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><i data-feather="list"></i> Sesi 12</td>
+                          <td><i data-feather="calendar"></i> 2025-06-20</td>
+                          <td><i data-feather="clock"></i> 04:10:00</td>
+                          <td>
+                            <i
+                              data-feather="check-circle"
+                              class="text-success"
+                            ></i>
+                          </td>
+                        </tr>
                       </tbody>
                     </table>
                   </div>
@@ -181,7 +283,6 @@
               </div>
             </div>
           </section>
-
           <!-- table kelompok -->
           <section class="flex-grow-1 p-4">
             <!-- Data Kelompok -->
@@ -256,61 +357,12 @@
                         <td>Teknik dan Sains</td>
                         <td>089xxxxxxxx</td>
                       </tr>
-                      <tr>
-                        <td>7.</td>
-                        <td>Hana Bima</td>
-                        <td>34235345435</td>
-                        <td>Teknik Informatika</td>
-                        <td>Teknik dan Sains</td>
-                        <td>089xxxxxxxx</td>
-                      </tr>
-                      <tr>
-                        <td>8.</td>
-                        <td>Gina Pasha</td>
-                        <td>342453454543</td>
-                        <td>Teknik Mesin</td>
-                        <td>Teknik dan Sains</td>
-                        <td>089xxxxxxxx</td>
-                      </tr>
-                      <tr>
-                        <td>9.</td>
-                        <td>Rasya Putra</td>
-                        <td>245233234355</td>
-                        <td>Teknik Informatika</td>
-                        <td>Teknik dan Sains</td>
-                        <td>089xxxxxxxx</td>
-                      </tr>
-                      <tr>
-                        <td>10.</td>
-                        <td>Intan Gemilang</td>
-                        <td>654365237453</td>
-                        <td>Teknik Informatika</td>
-                        <td>Teknik dan Sains</td>
-                        <td>089xxxxxxxx</td>
-                      </tr>
-                      <tr>
-                        <td>11.</td>
-                        <td>Putra Bahari</td>
-                        <td>34235345354</td>
-                        <td>Teknik Mesin</td>
-                        <td>Teknik dan Sains</td>
-                        <td>089xxxxxxxx</td>
-                      </tr>
-                      <tr>
-                        <td>12.</td>
-                        <td>Putra Jangkar</td>
-                        <td>4534444533545</td>
-                        <td>Teknik Mesin</td>
-                        <td>Teknik dan Sains</td>
-                        <td>089xxxxxxxx</td>
-                      </tr>
                     </tbody>
                   </table>
                 </div>
               </div>
             </div>
           </section>
-
           <!-- Footer -->
           <footer class="text-center py-3 mt-5 bg-white border-top">
             <small

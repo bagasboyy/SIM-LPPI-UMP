@@ -54,267 +54,39 @@
 
         <!-- Main Content -->
         <main class="d-flex flex-column overflow-auto px-2">
-          <!-- Main Konten Form Pendaftaran Mentoring -->
-          <section class="container mt-5 mb-5">
-            <div class="card shadow p-4">
-              <h5 class="mb-4 text-primary">
-                <i data-feather="edit-3"></i>
-                <strong>Pendaftaran Mentor dan Mentee Berprestasi</strong>
-              </h5>
-
-              <form id="formPendaftaran">
-                <div class="row mb-3">
-                  <label class="col-sm-3 col-form-label">Nama</label>
-                  <div class="col-sm-9">
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="nama"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <label class="col-sm-3 col-form-label">Email</label>
-                  <div class="col-sm-9">
-                    <input
-                      type="email"
-                      class="form-control"
-                      name="email"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <label class="col-sm-3 col-form-label">NIM</label>
-                  <div class="col-sm-9">
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="nim"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <label class="col-sm-3 col-form-label">Angkatan</label>
-                  <div class="col-sm-9">
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="angkatan"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <label class="col-sm-3 col-form-label">Prodi</label>
-                  <div class="col-sm-9">
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="prodi"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <label class="col-sm-3 col-form-label">Fakultas</label>
-                  <div class="col-sm-9">
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="fakultas"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <label class="col-sm-3 col-form-label">Jenis Kelamin</label>
-                  <div class="col-sm-9">
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="jk"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="row mb-4">
-                  <label class="col-sm-3 col-form-label">No. HP/WA</label>
-                  <div class="col-sm-9">
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="hp"
-                      required
-                    />
-                  </div>
-                </div>
-                <!-- Upload File -->
-                <div class="row mb-4">
-                  <label class="col-sm-3 col-form-label"
-                    >Motivasi mengikuti seleksi</label
-                  >
-                  <div class="col-sm-9">
-                    <input class="form-control" type="file" id="uploadTugas" />
-                  </div>
-                </div>
-                <div class="row mb-4">
-                  <label class="col-sm-3 col-form-label">Sertifikat TBA</label>
-                  <div class="col-sm-9">
-                    <input class="form-control" type="file" id="uploadTugas" />
-                  </div>
-                </div>
-                <div class="row mb-4">
-                  <label class="col-sm-3 col-form-label">Sertifikat TBA</label>
-                  <div class="col-sm-9">
-                    <input class="form-control" type="file" id="uploadTugas" />
-                  </div>
-                </div>
-                <div class="row mb-4">
-                  <label class="col-sm-3 col-form-label">Sertifikat TBA</label>
-                  <div class="col-sm-9">
-                    <input class="form-control" type="file" id="uploadTugas" />
-                  </div>
-                </div>
-                <div class="row mb-4">
-                  <label class="col-sm-3 col-form-label">Sertifikat TBA</label>
-                  <div class="col-sm-9">
-                    <input class="form-control" type="file" id="uploadTugas" />
-                  </div>
-                </div>
-
-                <div class="text-center">
-                  <button type="submit" class="btn btn-primary px-4">
-                    Submit
-                  </button>
-                </div>
-              </form>
-
-              <p class="text-muted mt-3" style="font-size: 0.9rem">
-                *Form pendaftaran ini berlaku untuk daftar ulang bagi yang belum
-                lulus Mentoring.
-              </p>
-            </div>
-          </section>
-
-          <!-- Modal Konfirmasi -->
-          <div
-            class="modal fade"
-            id="konfirmasiModal"
-            tabindex="-1"
-            aria-labelledby="konfirmasiLabel"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content p-3">
-                <div class="modal-header border-0">
-                  <h5 class="modal-title" id="konfirmasiLabel">Konfirmasi</h5>
-                  <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Tutup"
-                  ></button>
-                </div>
-                <div class="modal-body">
-                  Apakah Anda yakin data sudah benar?
-                </div>
-                <div class="modal-footer border-0">
-                  <button
-                    type="button"
-                    class="btn btn-secondary"
-                    data-bs-dismiss="modal"
-                  >
-                    Tidak
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-success"
-                    id="btnYaSubmit"
-                  >
-                    Ya
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Modal Sukses -->
-          <div
-            class="modal fade"
-            id="suksesModal"
-            tabindex="-1"
-            aria-labelledby="suksesLabel"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content text-center p-4">
-                <div class="mb-3">
-                  <i
-                    class="text-success"
-                    data-feather="check-circle"
-                    style="width: 48px; height: 48px"
-                  ></i>
-                </div>
-                <h5 class="mb-3" id="suksesLabel">Berhasil Submit</h5>
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  data-bs-dismiss="modal"
-                >
-                  Tutup
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Update Rekrutmen -->
-          <section class="container py-4">
-            <div class="card shadow-sm border-0">
-              <div
-                class="card-header bg-primary text-white d-flex align-items-center"
-              >
-                <i data-feather="file-text" class="me-2"></i>
-                <h5 class="mb-0">Seleksi Mentor</h5>
-              </div>
-              <div class="card-body bg-light">
-                <!--#Function: Alur seleksi mentor-->
-                <div
-                  class="d-flex justify-content-center align-items-center flex-wrap gap-4 flow-container"
-                >
-                  <!-- Step 1 -->
-                  <div class="card-box">
-                    <strong>Mulai</strong>
-                  </div>
-
-                  <div class="arrow">→</div>
-
-                  <!-- Step 2 -->
-                  <div class="card-box">
-                    <strong>Wawancara</strong><br />
-                    Senin, 23 Juni 2025<br />
-                    13.00 - 15.00<br />
-                    Gedung A
-                  </div>
-
-                  <div class="arrow">→</div>
-
-                  <!-- Step 3 -->
-                  <div class="card-box">
-                    <strong>Hasil</strong><br />
-                    <span class="text-danger">Tidak Lulus</span>
-                  </div>
-                </div>
-
-                <!--#Function: Status akhir -->
-                <div class="status-box mt-4">
-                  <h6 class="mb-2">Status</h6>
-                  <span class="badge text-bg-danger">Tidak Lulus</span>
-                  <p class="mt-2 text-muted" style="font-size: 0.9rem">
-                    *Informasi lebih lanjut dapat menghubungi Admin.
+          <!-- card section -->
+          <section class="row g-3 flex-grow-1 p-4" style="margin-bottom: 190px">
+            <div class="col-md-6">
+              <div class="card border-primary shadow mb-3">
+                <div class="card-body">
+                  <h5 class="card-title"><strong>Daftar</strong></h5>
+                  <p class="card-text">
+                    Wajib diikuti mahasiswa baru sebagai syarat mengambil mata
+                    kuliah Kemuhammadiyahan.
                   </p>
+                  <a
+                    href="/pages/mentoring/seleksi/daftarseleksi.html"
+                    class="btn btn-primary btn-sm equal-width-btn"
+                  >
+                    Lanjut
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card border-primary shadow mb-3">
+                <div class="card-body">
+                  <h5 class="card-title"><strong>Hasil</strong></h5>
+                  <p class="card-text">
+                    Wajib diikuti mahasiswa baru sebagai syarat mengambil mata
+                    kuliah Kemuhammadiyahan.
+                  </p>
+                  <a
+                    href="/pages/mentoring/seleksi/hasilseleksi.html"
+                    class="btn btn-primary btn-sm equal-width-btn"
+                  >
+                    Lanjut
+                  </a>
                 </div>
               </div>
             </div>
