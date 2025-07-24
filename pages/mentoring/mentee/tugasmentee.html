@@ -59,8 +59,12 @@
 
         <!-- Main Content -->
         <main class="d-flex flex-column overflow-auto px-2">
+          <!-- title page -->
+          <section class="text-start px-4 pt-2">
+            <h1 class="outfit-medium">Tugas dan Materi Mentee</h1>
+          </section>
           <!-- Struktur Utama -->
-          <section class="container py-4">
+          <section class="container py-2 px-4">
             <!-- Card Biodata Mentor -->
             <div class="card mb-4 bg-light-subtle border-primary shadow-sm">
               <div class="row g-0 align-items-center">
@@ -93,6 +97,7 @@
             </div>
 
             <!-- Card Materi & Tugas -->
+            <!-- SESI 1 -->
             <div class="card shadow-sm p-3 mb-4">
               <div class="card-body">
                 <h5 class="card-title mb-0">SESI 1</h5>
@@ -136,6 +141,69 @@
                 <div class="mb-3">
                   <label for="feedback" class="form-label fw-semibold"
                     >Feedback pertemuan sesi 1</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="feedback"
+                    rows="3"
+                    placeholder="Tulis feedback di sini..."
+                  ></textarea>
+                </div>
+
+                <button
+                  type="button"
+                  class="btn btn-primary btn-sm equal-width-btn"
+                  onclick="konfirmasiFeedback()"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+
+            <!-- sesi 2 -->
+            <div class="card shadow-sm p-3 mb-4">
+              <div class="card-body">
+                <h5 class="card-title mb-0">SESI 2</h5>
+                <p class="fw-semibold">Tajwid</p>
+                <p class="text-muted mb-4">
+                  Mempelajari tentang tajwid<br />Senin, 25 Juni 2025
+                </p>
+
+                <!-- Materi -->
+                <div
+                  class="d-flex justify-content-between align-items-center mb-2"
+                >
+                  <label class="fw-semibold">Materi Sesi 2</label>
+                  <a href="#" class="btn btn-sm btn-outline-secondary"
+                    >Download</a
+                  >
+                </div>
+
+                <!-- Tugas -->
+                <div
+                  class="d-flex justify-content-between align-items-center mb-2"
+                >
+                  <label class="fw-semibold">Tugas Sesi 2</label>
+                  <a href="#" class="btn btn-sm btn-outline-secondary"
+                    >Download</a
+                  >
+                </div>
+
+                <!-- Upload Tugas -->
+                <div class="mb-3">
+                  <label class="form-label fw-semibold"
+                    >Pengumpulan Tugas Sesi 2</label
+                  >
+                  <p class="text-muted small mb-2">
+                    Deadline: Jumat, 29 Juni 2025, 23.59 WIB
+                  </p>
+                  <input class="form-control" type="file" id="uploadTugas" />
+                </div>
+
+                <!-- Feedback -->
+                <div class="mb-3">
+                  <label for="feedback" class="form-label fw-semibold"
+                    >Feedback pertemuan sesi 2</label
                   >
                   <textarea
                     class="form-control"
