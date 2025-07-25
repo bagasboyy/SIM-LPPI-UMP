@@ -41,13 +41,25 @@
         <nav
           style="--bs-breadcrumb-divider: '>'"
           aria-label="breadcrumb"
-          class="border pt-2 ps-2"
+          class="py-2 ps-2"
         >
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/dashboard.html">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">BIBAQ</li>
+            <li class="breadcrumb-item" style="font-size: 15px">
+              <a href="/dashboard.html">
+                <i data-feather="home" style="max-height: 15px"></i>Home</a
+              >
+            </li>
+            <li
+              class="breadcrumb-item active"
+              aria-current="page"
+              style="font-size: 15px"
+            >
+              BIBAQ
+            </li>
           </ol>
         </nav>
+        <!-- navigasi pake card -->
+        <div id="navcard-placeholder" class="d-none d-md-block"></div>
 
         <!-- Main Content -->
         <main class="d-flex flex-column overflow-auto px-2">
@@ -61,7 +73,7 @@
             style="margin-bottom: 190px"
           >
             <div class="col-md-6">
-              <div class="card border-primary shadow mb-3">
+              <div class="card border-dark-subtle mb-3">
                 <div class="card-body">
                   <h5 class="card-title"><strong>Daftar</strong></h5>
                   <p class="card-text">
@@ -78,7 +90,7 @@
               </div>
             </div>
             <div class="col-md-6">
-              <div class="card border-primary shadow mb-3">
+              <div class="card border-dark-subtle mb-3">
                 <div class="card-body">
                   <h5 class="card-title"><strong>Bimbingan</strong></h5>
                   <p class="card-text">

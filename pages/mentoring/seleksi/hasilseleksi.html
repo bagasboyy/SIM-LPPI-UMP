@@ -41,19 +41,37 @@
         <nav
           style="--bs-breadcrumb-divider: '>'"
           aria-label="breadcrumb"
-          class="border pt-2 ps-2"
+          class="py-2 ps-2"
         >
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/dashboard.html">Home</a></li>
-            <li class="breadcrumb-item">
-              <a href="/pages/mentoring/mentoring.html">Mentoring</a>
+            <li class="breadcrumb-item" style="font-size: 15px">
+              <a href="/dashboard.html">
+                <i data-feather="home" style="max-height: 15px"></i>Home</a
+              >
             </li>
             <li class="breadcrumb-item">
-              <a href="/pages/mentoring/seleksi/seleksi.html">Seleksi</a>
+              <a href="/pages/mentoring/mentoring.html" style="font-size: 15px"
+                >Mentoring</a
+              >
             </li>
-            <li class="breadcrumb-item active" aria-current="page">Hasil</li>
+            <li class="breadcrumb-item">
+              <a
+                href="/pages/mentoring/seleksi/seleksi.html"
+                style="font-size: 15px"
+                >Seleksi Berprestasi</a
+              >
+            </li>
+            <li
+              class="breadcrumb-item active"
+              aria-current="page"
+              style="font-size: 15px"
+            >
+              Hasil
+            </li>
           </ol>
         </nav>
+        <!-- navigasi pake card -->
+        <div id="navcard-placeholder" class="d-none d-md-block"></div>
 
         <!-- Main Content -->
         <main class="d-flex flex-column overflow-auto px-2">
@@ -249,7 +267,7 @@
           </section>
 
           <!-- Update Rekrutmen Mentee-->
-          <section class="container py-3 px-1">
+          <section class="container py-3 px-4">
             <div class="card shadow-sm border-0">
               <!--#Function: Alur seleksi mentor-->
               <!-- Header -->

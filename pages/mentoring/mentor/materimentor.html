@@ -41,21 +41,37 @@
         <nav
           style="--bs-breadcrumb-divider: '>'"
           aria-label="breadcrumb"
-          class="border pt-2 ps-2"
+          class="py-2 ps-2"
         >
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/dashboard.html">Home</a></li>
-            <li class="breadcrumb-item">
-              <a href="/pages/mentoring/mentoring.html">Mentoring</a>
+            <li class="breadcrumb-item" style="font-size: 15px">
+              <a href="/dashboard.html">
+                <i data-feather="home" style="max-height: 15px"></i>Home</a
+              >
             </li>
             <li class="breadcrumb-item">
-              <a href="/pages/mentoring/mentor/mentor.html">Mentor</a>
+              <a href="/pages/mentoring/mentoring.html" style="font-size: 15px"
+                >Mentoring</a
+              >
             </li>
-            <li class="breadcrumb-item active" aria-current="page">
-              Materi dan Tugas
+            <li class="breadcrumb-item">
+              <a
+                href="/pages/mentoring/mentor/mentor.html"
+                style="font-size: 15px"
+                >Mentor</a
+              >
+            </li>
+            <li
+              class="breadcrumb-item active"
+              aria-current="page"
+              style="font-size: 15px"
+            >
+              Materi dan Tugas Mentor
             </li>
           </ol>
         </nav>
+        <!-- navigasi pake card -->
+        <div id="navcard-placeholder" class="d-none d-md-block"></div>
 
         <!-- Main Content -->
         <main class="d-flex flex-column overflow-auto px-2">
@@ -66,7 +82,7 @@
           <!-- Struktur Utama -->
           <section class="container py-2 px-4">
             <!-- Card Biodata Mentor -->
-            <div class="card mb-4 bg-light-subtle border-primary shadow-sm">
+            <div class="card mb-4 bg-light-subtle border-dark-subtle">
               <div class="row g-0 align-items-center">
                 <div class="col-md-10">
                   <div class="card-body">
@@ -259,6 +275,6 @@
       crossorigin="anonymous"
     ></script>
     <!-- MAIN JS -->
-    <script src="/assets/js/main.js"></script>
+    <script type="module" src="/assets/js/main.js"></script>
   </body>
 </html>

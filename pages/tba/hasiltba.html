@@ -41,16 +41,30 @@
         <nav
           style="--bs-breadcrumb-divider: '>'"
           aria-label="breadcrumb"
-          class="border pt-2 ps-2"
+          class="py-2 ps-2"
         >
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/dashboard.html">Home</a></li>
-            <li class="breadcrumb-item">
-              <a href="/pages/tba/tba.html">Tes Baca Al-Qur'an</a>
+            <li class="breadcrumb-item" style="font-size: 15px">
+              <a href="/dashboard.html">
+                <i data-feather="home" style="max-height: 15px"></i>Home</a
+              >
             </li>
-            <li class="breadcrumb-item active" aria-current="page">Hasil</li>
+            <li class="breadcrumb-item">
+              <a href="/pages/tba/tba.html" style="font-size: 15px"
+                >Tes Baca Al-Qur'an</a
+              >
+            </li>
+            <li
+              class="breadcrumb-item active"
+              aria-current="page"
+              style="font-size: 15px"
+            >
+              Hasil Tes Baca Al-Qur'an
+            </li>
           </ol>
         </nav>
+        <!-- navigasi pake card -->
+        <div id="navcard-placeholder" class="d-none d-md-block"></div>
 
         <!-- Main Content -->
         <main class="d-flex flex-column overflow-auto px-2">
