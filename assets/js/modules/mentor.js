@@ -68,7 +68,7 @@ function renderPresensiTable() {
               }>✅</option>
               <option value="tidak" ${
                 status === "tidak" ? "selected" : ""
-              }>❌</option>
+              }>  </option>
             </select>
           </td>
         `;
@@ -163,3 +163,7 @@ function updateFileUI(type) {
       `;
   }
 }
+
+// Daftarkan fungsi ke global agar bisa diakses dari onclick di HTML
+window.uploadFile = uploadFile;
+window.deleteFile = deleteFile;
